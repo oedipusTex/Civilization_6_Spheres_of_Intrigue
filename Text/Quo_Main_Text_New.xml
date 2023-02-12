@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 11/25/2016 1:28:54 PM -->
+<GameData>
+
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_OLIGARCHY_DESC" Language="en_US">
+			<Text>+4[ICON_STRENGTH] for melee, anti-cavalary, melee ships. Land units have +1[ICON_MOVEMENT] in unclaimed hexes.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_AUTOCRACY_DESC" Language="en_US">
+			<Text>+1 to all Yields per govt building. +1[ICON_FAITH] to each tile adjacent to a Wonder.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_CLASSICAL_DESC" Language="en_US">
+			<Text>Cities with a district receive +1[ICON_AMENITIES] +1[ICON_HOUSING]. Settlers have +3[ICON_MOVEMENT]Moves and Stealth.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_THEOCRACY_DESC" Language="en_US">
+			<Text>Religious units +5[ICON_STRENGTH]. +0.5[ICON_FAITH]/citizen from governors. +2[ICON_FAITH]+2[ICON_CULTURE]+1[ICON_PRODUCTION] from Temples.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_MONARCHY_DESC" Language="en_US">
+			<Text>+1[ICON_HOUSING] Housing per level of walls. +1[ICON_CULTURE] to Farms 2 tiles from an Encampment.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_MERCHANT_DESC" Language="en_US">
+			<Text>+10%[ICON_GOLD] in cities with governors. +2[ICON_GOLD] next to Oases or Natural Wonders.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_FASCISM_DESC" Language="en_US">
+			<Text>+7[ICON_STRENGTH]for all units. Ranged and Anti-Cavalry units have +2[ICON_RANGE]Range.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_DEMOCRACY_DESC" Language="en_US">
+			<Text>+2[ICON_PRODUCTION], +1[ICON_HOUSING] per district. All districts culture bomb.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_COMMUNISM_DESC" Language="en_US">
+			<Text>Governors provide +0.4%[ICON_PRODUCTION] per citizen. Cities gain Urban Defenses.</Text>
+		</Row>
+	</LocalizedText>
+
+
+
+
+	<LocalizedText>
+		<Row Tag="LOC_QUO_ABI_PIKEMAN_BARBARIAN_WEAK_PREVIEW" Language="en_US">
+			<Text>-4[ICON_STRENGTH] for Barbarian Spearmen</Text>
+		</Row>
+	</LocalizedText>
+
+	<LocalizedText>
+		<Row Tag="LOC_QUO_TRAIT_GENERIC_FRIENDS_NAME" Language="en_US">
+			<Text>[ICON_CAPITAL]Quo Generic Friendship Bonus</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_TRAIT_FRIENDS_GENERIC_DESCRIPTION" Language="en_US">
+			<Text>This downloaded leader will provide +1 Trade Route to any player they are Friends with.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_RESOURCE_VICTORY_WIN_NAME" Language="en_US">
+			<Text>Ultima Activator</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_PROJECT_RESOURCE_VICTORY_NAME_SHORT" Language="en_US">
+			<Text>[ICON_CAPITAL]Harvest Ultima - BUILD TO WIN RESOURCE VICTORY</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_PROJECT_RESOURCE_VICTORY_DESCRIPTION" Language="en_US">
+			<Text>[ICON_CAPITAL]Complete the Harvest Ultima project to win a Resource Victory. You can only build this project if you have a sufficient number of Resource Expos.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_RESOURCE_ULTIMA_NAME" Language="en_US">
+			<Text>[ICON_CAPITAL]Ultima Extract</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_RESOURCE_VICTORY_NAME" Language="en_US">
+			<Text>Luxury Victory</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_RESOURCE_VICTORY_BLURB" Language="en_US">
+			<Text>Control more copies of at least 14 Luxury resources than any other player (minimum 3) and construct the Harvest Ultima Project.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_BUILDING_RESOURCE_VICTORY_WIN" Language="en_US">
+			<Text>Luxury Suite</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BUILDING_AMBASSADOR_SUITE_NAME" Language="en_US">
+			<Text>Ambassador's Suite</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BUILDING_AMBASSADOR_SUITE_DESCRIPTION" Language="en_US">
+			<Text>On being built, provides a free envoy that can be dispatched to a City State. Mutually exclusive with Zoos.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_TECH_ASTROLOGY_DESCRIPTION" Language="en_US">
+			<Text>Allows Traders to embark.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_TECH_WRITING_DESCRIPTION" Language="en_US">
+			<Text></Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_FRIENDS_AZTEC_GLOBAL_COMBAT_DESCRIPTION" Language="en_US">
+			<Text>+2 from friends with Aztecs</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_LOC_FRIENDS_MAPUCHE_GLOBAL_COMBAT_DESCRIPTION" Language="en_US">
+			<Text>+7 from friends with Mapuche</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_LOC_FRIENDS_MONGOLIA_GLOBAL_COMBAT_DESCRIPTION" Language="en_US">
+			<Text>+3 from friends with Mongolia</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_LOC_KHMER_GLOBAL_COMBAT_DESCRIPTION" Language="en_US">
+			<Text>+2 from Aqueduct</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_QUO_ABI_PIKEMAN_DEBUFF_PREVIEW" Language="en_US">
+			<Text>-5 [ICON_STRENGTH] Strength from adjacent Anti-Calvary</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_OPTION_BORDER_SPEED_NAME" Language="en_US">
+			<Text>[ICON_CAPITAL] Border Speed</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_OPTION_BORDER_SPEED_DESCRIPTION" Language="en_US">
+			<Text>[ICON_CAPITAL] Added by Quo Mod. Rate of border expansion.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_OPTION_BORDERS_DUMMY_NAME" Language="en_US">
+			<Text>Office of Border Administration</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_OPTION_ADMINISTRATION_DUMMY_NAME" Language="en_US">
+			<Text>[ICON_CAPITAL]Leader Throne</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_CITRUS" Language="en_US">
+			<Text>[ICON_FOOD]Expo: Citrus</Text>
+		</Row>
+	</LocalizedText>
+
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_COCOA" Language="en_US">
+			<Text>[ICON_GOLD]Expo: Cocoa</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_COFFEE" Language="en_US">
+			<Text>[ICON_CULTURE]Expo: Coffee</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_COTTON" Language="en_US">
+			<Text>[ICON_GOLD]Expo: Cotton</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_DIAMONDS" Language="en_US">
+			<Text>[ICON_GOLD]Expo: Diamonds</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_DYES" Language="en_US">
+			<Text>[ICON_FAITH]Expo: Dyes</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_FURS" Language="en_US">
+			<Text>[ICON_GOLD]Expo: Furs</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_GYPSUM" Language="en_US">
+			<Text>[ICON_PRODUCTION]Expo: Gypsum</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_INCENSE" Language="en_US">
+			<Text>[ICON_FAITH]Expo: Incense</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_IVORY" Language="en_US">
+			<Text>[ICON_PRODUCTION]Expo: Ivory</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_MARBLE" Language="en_US">
+			<Text>[ICON_CULTURE]Expo: Marble</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_MERCURY" Language="en_US">
+			<Text>[ICON_SCIENCE]Expo: Mercury</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_PEARLS" Language="en_US">
+			<Text>[ICON_FAITH]Expo: Pearls</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_SALT" Language="en_US">
+			<Text>[ICON_FOOD]Expo: Salt</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_SILK" Language="en_US">
+			<Text>[ICON_CULTURE]Expo: Silk</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_SILVER" Language="en_US">
+			<Text>[ICON_GOLD]Expo: Silver</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_SPICES" Language="en_US">
+			<Text>[ICON_FOOD]Expo: Spices</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_SUGAR" Language="en_US">
+			<Text>[ICON_FOOD]Expo: Sugar</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_TEA" Language="en_US">
+			<Text>[ICON_SCIENCE]Expo: Tea</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_TOBACCO" Language="en_US">
+			<Text>[ICON_FAITH]Expo: Tobacco</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_TRUFFLES" Language="en_US">
+			<Text>[ICON_GOLD]Expo: Truffles</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_WHALES" Language="en_US">
+			<Text>[ICON_FAITH]Expo: Whales</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_WINE" Language="en_US">
+			<Text>[ICON_FOOD]Expo: Wine</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_JADE" Language="en_US">
+			<Text>[ICON_CULTURE]Expo: Jade</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_UNIT_WATCHTOWER_NAME" Language="en_US">
+			<Text>Watchtower</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_UNIT_WATCHTOWER_DESCRIPTION" Language="en_US">
+			<Text>Watchtowers provide vision over a large area. They can be captured by enemy combat units.</Text>
+		</Row>
+	</LocalizedText>
+</GameData>
+
+
+

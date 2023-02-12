@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 11/25/2016 1:28:54 PM -->
+<GameData>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_ABILITY_ANTI_MELEE_MODIFIER_DESCRIPTION" Language="ru_RU">
+			<Text>+10 против пехоты</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_ZIG_ADJ" Language="ru_RU">
+			<Text>+1 за каждый соседний Зиккурат</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_GREATWALL_ADJ" Language="ru_RU">
+			<Text>+1 за каждые 2 смежные клетки с Великой Стеной</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_SPHINX_CULT_ADJ" Language="ru_RU">
+			<Text>+1 к [ICON_CULTURE] культуре за каждый соседний Сфинкс</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_SPHINX_FAI_ADJ" Language="ru_RU">
+			<Text>+1 к [ICON_FAITH] вере за каждый соседний Сфинкс</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_RUSSIA_IZ_ADJACENCY" Language="ru_RU">
+			<Text>+1 к [ICON_PRODUCTION] производству за каждый соседний холм тундры.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_SPAIN_ADJACENCY_COM" Language="ru_RU">
+			<Text>+5 единиц [ICON_GOLD] золота за каждое соседнее Чудо природы.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_EXTRA_VISION" Language="ru_RU">
+			<Text>+1 к радиусу обзора</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BUILDING_TLACHTLI_DESCRIPTION" Language="ru_RU">
+			<Text> [ICON_CAPITAL] (Quo Mod: Предоставляет дополнительные очки атаки и даёт возможность Центру города обстреливать врагов.)</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_RESOURCE_TURQUOISE" Language="ru_RU">
+			<Text>Бирюза</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_TEMPLO_MAYOR_NAME" Language="ru_RU">
+			<Text>Темпло Майор</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_TEMPLO_MAYOR_DESCRIPTION" Language="ru_RU">
+			<Text>Уникальное Чудо света. Только Ацтеки могут его построить. Ускоряет на +50% [ICON_PRODUCTION] производство Тлачтлей, устраняет штрафы и ограничения на использование зарядов строителей, предоставляет бесплатного строителя всякий раз, когда достроен Развлекательный комплекс. Город, в котором находится Чудо, теряет -4 [ICON_FOOD] пищи в ход.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_PROJECT_BRAZILWOOD_NAME" Language="ru_RU">
+			<Text>Бразильская революция</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_PROJECT_BRAZILWOOD_SHORT_NAME" Language="ru_RU">
+			<Text>Бразильская революция</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_PROJECT_BRAZILWOOD_DESCRIPTION" Language="ru_RU">
+			<Text>Обеспечивает единовременный большой прирост очков [ICON_GREATPERSON] Великих людей и дает возможность строителям возводить Вырубки красного дерева.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_IMPROVEMENT_BRAZILWOOD_CAMP_NAME" Language="ru_RU">
+			<Text>Вырубка красного дерева</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_IMPROVEMENT_BRAZILWOOD_CAMP_DESCRIPTION" Language="ru_RU">
+			<Text>+2 единицы [ICON_GOLD] золота от клеток с джунглями.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_MOD_MELEE_NAVAL_VS_DISTRICTS_PREVIEW" Language="ru_RU">
+			<Text>+12 к [ICON_STRENGTH] боевой мощи против районов.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_ABI_MELEE_NAVAL_VS_DISTRICTS_NAME" Language="ru_RU">
+			<Text>Прибрежное вторжение</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_ABI_MELEE_NAVAL_VS_DISTRICTS_DESCRIPTION" Language="ru_RU">
+			<Text>+8 к [ICON_STRENGTH] боевой мощи против районов.</Text>
+		</Row>
+	</LocalizedText>
+</GameData>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
+<GameInfo>
+<!-- 	<RuleSets>
+		<Row>
+			<RuleSetType>QUO_RULESET_CIVS_ONLY</RuleSetType>
+			<Name>Quo Civilization Buffs Only</Name>
+			<Description>Enables the buffs to civilizations and friendship gifts ONLY, without applying other game changes.</Description>
+			<LongDescription>Enables the buffs to civilizations and friendship gifts ONLY, without applying other game changes.</LongDescription>
+		</Row>
+	</RuleSets>
+	<Parameters>
+		<Row Key1="Ruleset" Key2="QUO_RULESET_CIVS_ONLY" ParameterId="NoGoodyHuts" Name="LOC_GAME_NO_GOODY_HUTS" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAME_NO_GOODY_HUTS" GroupId="AdvancedOptions" SortIndex="2010"/>
+		<Row Key1="Ruleset" Key2="QUO_RULESET_CIVS_ONLY" ParameterId="NoBarbarians" Name="LOC_GAME_NO_BARBARIANS" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" GroupId="AdvancedOptions" SortIndex="2010"/>
+	</Parameters> -->
+	<!--<RuleSets>
+		<Row>
+			<RuleSetType>QUO_RULESET_HARDCORE</RuleSetType>
+			<Name>Quo Hardcore Rules</Name>
+			<Description>Disables science and culture from population and rebalances output from buildings, and removes free envoys on meeting a city state.</Description>
+			<LongDescription>Disables science and culture from population.</LongDescription>
+		</Row>
+	</RuleSets>-->
+</GameInfo>

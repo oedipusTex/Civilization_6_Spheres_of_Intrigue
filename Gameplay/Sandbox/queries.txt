@@ -1,0 +1,107 @@
+
+MODIFIER_PLAYER_UNIT_ESCAPE_BOOST
+
+
+select * from leadertraits
+left join traits on leadertraits.TraitType = traits.TraitType
+left join traitmodifiers on traitmodifiers.TraitType = leadertraits.TraitType
+left join modifiers on modifiers.ModifierId = traitmodifiers.ModifierId
+left join modifierarguments on modifierarguments.ModifierId = modifiers.modifierid
+where leadertraits.LeaderType like '%LEADER_GIT%' ;
+
+
+select * from civilizationtraits
+left join traits on civilizationtraits.TraitType = traits.TraitType
+left join traitmodifiers on traitmodifiers.TraitType = CIVILIZATIONtraits.TraitType
+left join modifiers on modifiers.ModifierId = traitmodifiers.ModifierId
+left join modifierarguments on modifierarguments.ModifierId = modifiers.modifierid
+where civilizationtraits.civilizationtype like '%NUBIA%' ;
+
+
+
+select * from randomagendas
+left join agendas on agendas.AgendaType = randomagendas.AgendaType
+left join agendatraits on agendatraits.AgendaType = randomagendas.AgendaType
+left join traits on traits.traittype = agendatraits.traittype
+left join traitmodifiers on traitmodifiers.TraitType = traits.TraitType
+left join modifiers on modifiers.ModifierId = traitmodifiers.ModifierId
+left join modifierarguments on modifierarguments.ModifierId = modifiers.ModifierId
+
+
+
+
+select * from modifiers
+left join modifierarguments on modifierarguments.ModifierId = modifiers.ModifierId
+where modifiers.Modifiertype ='MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE'
+
+
+
+
+
+select * from requirementsets
+left join requirementsetrequirements on requirementsetrequirements.RequirementSetId = requirementsets.RequirementSetId
+left join requirements on requirements.requirementid = requirementsetrequirements.RequirementId
+left join requirementarguments on requirementarguments.RequirementId = requirements.requirementid
+where requirements.RequirementType like '%REQUIREMENT_HAS_POLICY_ACTIVE%'
+
+
+
+
+select * from beliefs
+inner join beliefmodifiers on beliefmodifiers.BeliefType = beliefs.BeliefType
+inner join modifierarguments as MA1 on ma1.ModifierId = beliefmodifiers.ModifierID
+inner join modifiers on MA1.Value = modifiers.ModifierId
+left join modifierarguments as Ma2 on Ma2.ModifierId = MA1.Value
+left join requirementsets on requirementsets.RequirementSetId = modifiers.SubjectRequirementSetId
+left join requirementsetrequirements on requirementsetrequirements.RequirementSetId = requirementsets.RequirementSetId
+left join requirementarguments on requirementarguments.RequirementId = requirementsetrequirements.RequirementId 
+
+
+
+select * from historicalagendas
+left join agendatraits on agendatraits.AgendaType = historicalagendas.AgendaType
+left join traits on traits.TraitType = agendatraits.TraitType
+left join traitmodifiers on traitmodifiers.TraitType = traits.TraitType
+left join modifiers on modifiers.ModifierId = traitmodifiers.ModifierId
+left join requirementsets on requirementsets.RequirementSetId = modifiers.SubjectRequirementSetId
+left join requirementsetrequirements on requirementsetrequirements.RequirementSetId = requirementsets.RequirementSetId
+left join requirements on requirements.requirementid = requirementsetrequirements.RequirementId
+left join requirementarguments on requirementarguments.RequirementId = requirements.requirementid
+
+
+
+
+REQUIREMENT_PLAYER_CONQUERING_ALLYING_MINORS
+REQUIREMENT_CIVILIZATION_LEVEL
+REQUIREMENT_PLAYER_MET_X_TURNS_AGO
+REQUIREMENT_PLAYER_NOT_INVOLVED_MINORS
+REQUIREMENT_PLAYER_IS_NOT_WARMONGER
+REQUIREMENT_PLAYER_HAS_MET
+REQUIREMENT_REQUIREMENTSET_IS_MET
+REQUIREMENT_DENOUNCED_FRIEND
+REQUIREMENT_PLAYER_IS_AT_PEACE
+REQUIREMENT_DECLARED_FRIEND
+
+REQUIREMENT_PLAYER_WITH_SHIELD_OR_ON_IT
+REQUIREMENT_PLAYER_RELIGION_NOT_RECEIVED
+REQUIREMENT_PLAYER_RELIGION_RECEIVED
+REQUIREMENT_PLAYER_GOT_GREAT_PERSON
+REQUIREMENT_PLAYER_COMPETING_MINORS
+REQUIREMENT_PLAYER_NOT_COMPETING_MINORS
+REQUIREMENT_PLAYER_FINISHED_RESEARCH
+REQUIREMENT_CITY_CONVERTED
+REQUIREMENT_PLAYER_IS_SAME_RELIGION
+REQUIREMENT_PLAYER_BUILT_WONDER
+REQUIREMENT_PLAYER_DECLARED_WAR
+REQUIREMENT_PLAYER_ATTACKED_CONTINENT
+REQUIREMENT_PLAYER_PEACEFUL_ON_CONTINENT
+REQUIREMENT_PLAYER_SHARES_HOME_CONTINENT
+REQUIREMENT_PLAYER_ON_NON_HOME_CONTINENT
+REQUIREMENT_PLAYER_IS_NEIGHBOR
+REQUIREMENT_PLAYER_HAS_MANY_ALLIANCES
+REQUIREMENT_PLAYER_AT_WAR_WITH_NEIGHBOR
+REQUIREMENT_PLAYER_YIELD_LEAD
+REQUIREMENT_PLAYER_AVERAGE_WALL_LEVEL_THRESHOLD
+REQUIREMENT_PLAYER_HAS_DESIRED_LUXURY
+REQUIREMENT_PLAYER_DISTRICT_THRESHOLD
+REQUIREMENT_CITY_LIBERATED

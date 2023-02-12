@@ -1,0 +1,463 @@
+v8.0.4
+ - new world: free wmds
+ - new world: has access to one copy of all governors
+
+
+v8.0.3
+ - Fixed bug with Druid ability sets
+ - Fixed a bug that caused the Pacific Harbor graphic to disappear
+ 
+ 
+
+v8.0.2
+ - Educator: Reduced Culture and Science per citizen to 0.75 (down from 1)
+ - Mariner: Reduced Production per citizen to 0.75 (down from 1)
+ - Druid: Reduced Food per citizen to 0.5 (down from 1)
+ - Resource Manager: Moved Groundbreaker forward 1 slot
+ - Fixed icon issue with Mariner and Druid mayors
+ - Fixed a bug that accidentally added Macedon to the Asian Pacific sphere
+ - Fixed a bug that completely broke Sub Saharan Africa for all leaders
+ - New gold ability for Western Europe
+ - Fixed a bug that made Seaside Imports promotion unselectable
+ 
+ 
+
+v8.0.1
+ - Shipyards now properly provide bonus Production based on Culture adjacencies when built in a Pacific Harbor
+ - Policies and governor special abilities that enhance harbor adjacencies should now properly apply to Culture obtained from Pacific Harbors
+ 
+
+
+v8.0.00 
+ - City capture now razes buildings in Campuses and Theaters to compensate for city center buildings no longer being destroyed
+ - Hellmode tier 1 no longerprovides free air units to AIs
+ - In hell mode tier 1, unit promotions no longer provide free healing
+ - Updated the adjacencies of the Pacific Harbor
+ - Fixed AI use of Pedro's project
+ - AI can now use the Nomadic Asia special project
+ - Introduction of sphere governors
+ - Expanding roads introduced. When city hits certain district breakpoints, roads automatically appear
+ 
+
+v7.0.19
+ - Updated Nomadic Asia so that bonuses to luxuries are now based on presence of Ancient Bedrock. Also now only applies to improved resources
+ - Capturing a city no longer damages buildings in the City center. 
+ - Asian Pacific: New district
+ - Japan no longer receives points toward a Great General for each holy site, theater, or encampment
+
+
+V7.0.17 
+ - Changed Persia's friend bonus to +2 gold from internal trade routes (changed from ability to cosntruct Paraidazeas)
+ - Fixed a bug that prevented North Africa's protection from trade route plundering from working
+ - Brazil: Brazilwood camps now provide Culture instead of Gold.
+ - Fixed issues that resulted from changing the location of the Capital and its interaction with the Bedrock system
+ - Nomadic Asia expanded
+ 
+ 
+
+v7.0.16
+ - Fixed a bug that caused Western Europe civs to provide their free Medieval Bedrock bonus to all civilizations in the game rather than just their own cities
+ - Hellenic: Bonus districts now only applies to city with the gov plaza
+ - Asian Pacific: Upped Gold bonus and added volcanoes as a gold supplier 
+ - North Africa: Locked the list of units affected by this civs abilities
+ 
+
+v7.0.15
+ - Introduced North African sphere to the game
+
+v 7.0.14
+ - Air units now once again require Aerodromes. This is to stave off the possibility of crashes in Rising Storm
+ - Musketmen now once again require Niter
+ - The Ranged Combat strength of Anti Cavalry when QUO_OPTION_ARE_ANTI_CAV_RANGED is set to is now equal to base Combat +5 (increased from +0)
+ - Fixed a bug where Nubia did not receive the African districts as part of its sphere
+ - Fixed a bug where a fan-made mod civ would provide 
+ - Arabesque sphere has been renamed Middle East
+ - Fixed a bug that caused Russia to lose its bonuses on Tundra due to a conflict with old Biome 
+ - All code that was previously part of the Quo_Oceans_Code.sql file has been commented out since it is no longer needed as of RS
+ - Something I changed somewhere changed the willingness of barbarian spearmen to stab you on their turn. Not sure what it was, but watch out :)
+ 
+ 
+
+v 7.0.13
+ - New World: All units disregard rivers and zone of control in their movement costs
+ - Eastern Europe: Support units that have charges are no longer forbidden to this sphere
+ - Arabesque: Now made disaster-immune by Holy Sites in a certain radius. Lowered water bonus
+ - Mainland Asia: +1 points toward Great Engineer per 5 population
+
+
+v 7.0.12
+ - Reintroduced the +1 culture to tiles adjacent to volcanoes bonus of God of the Forge pantheon removed in previous patch with corrections that should make it actually function
+ - Removed changes to Hanging Gardens world wonder. In general, this mod will no longer make edits to World Wonders.
+ - Restored the Zwiennder melee promotion, which increased Melee combat vs Anti Cavalry, back to defaults
+ - Removed bonus Science to Iron added in early patches. No longer needed as of GS
+ - Removed bonus science/food/culture on sea resources since Firaxis buffed these 
+ - New World civilizations can now recruit Great Prophets again in order to prevent too-easy religious victories when multiple New World civs are in game
+ - Africa now can build any district that is African for a price 33% higher than a normal district
+ - Updated Hellenic sphere
+ - Asian pacific sphere no longer gets extra appeal from Volcanoes. Thematic as this is, the text was too wordy.
+ - Asian pacific sphere now earns 150 gold on earning 3 deep water ocean tiles (down from 250)
+ - Arabesque sphere redesigned
+ - Removed radial fresh water housing effect from Roman Aqueducts
+ - Removed the "Mysterium" resource and associated effects for Scythia
+ 
+ 
+ 
+v.7.0.11
+- Removed bonus food to farms from aqueducts. They still provide points towards Great Engineers
+- Removed volcano adjacency bonus for God of the Forge belief as this will require a big time investment I am not willing to make right now in order to fix
+- The Enable Free Placement of Wonders MyOption no longer applies to wonders that require a Harbor adjacency in order to prevent gamebreaking issues with boats/naval units
+- Fixed a bug with the Maori friendship gift that caused it not to function
+- The New World sphere now uses a more efficient mechanic introduced in Gathering Storm to power its culture bombs. Should hopefully operate the same as before
+ 
+ 
+
+v7.0.10
+- Removed changes to production Policies that made them retroactive since these were fixed by Firaxis in Gathering Storm
+- Removed the Sangha Monk (Khmer unique unit) from the game
+- Khmer Prasat (unique building) no longer provides Medieval bedrock in a city (this takes a bit too much away from the Western Europe sphere)
+- Mongolia no longer causes enemy cities to lose Loyalty per turn (moved to Mapuche)
+- Mapuche no longer have +1 Vision
+- Mapuche now cause enemies at war to lose 4 loyalty per turn in all cities
+- Egyptian Sphinxes no longer provide +1 faith +1 culture to adjacent desert tiles 
+- Jadwiga/Poland is now correctly a Eastern Europe sphere civ and not a Scandinavian civ on both the character select and in-game screens
+- Fixed broken text field for Lady of reeds and marshes pantheon belief
+- Loyalty penalty for Hellenic civs changed to -25%
+- Hopefully fixed bug introduced in Gathering Storm where conquering a city that previously had Bedrock destroyed the Bedrock building and it couldn't be repaired
+- God of Forge belief now provides +1 culture on tiles adjacent to volcanoes
+
+v7.0.9
+- Lowered bonus to production provided by friendship gifts toward specific districts (Harbor, Com Hub, etc) from 50% to 25%
+- Lowered bonus attack strength from friendship with Aztecs from +4 to +2
+
+v7.0.8
+ - Bug fixes to stop CTD
+ - Changed Hungary's friendship gift to a flat bonus to district production to prevent crashes
+ - Changed 
+  
+
+v7.0.6
+- Friendship gifts are now listed on the player select screen
+
+v7.0.5
+- Fixed a bug in Victoria's text that claimed abilities that had been removed still worked
+- Fixed a bug that prevented Scandinavian civs from being able to work snow mountains
+- Spain: Missions no longer can be built on Forest or Rainforest since this conflicts with the Western Europe sphere penalties
+- Mapuche: Removed ability that revealed strategic resources (overpowered in GS)
+- Native America: The Stealth ability no longer expires
+
+
+v7.0.2 
+ - Fixed  bug with Scandinavia sphere that caused Dams to unlock with Masonry rather than Shipbuilding
+
+
+v7.0.1
+- Added friendship bonuses to new civilizations
+- Befriending Zulu now provides +3 loyalty per turn in cities with a garrison (up from +1)
+- Fixed text strings for various civs
+- Removed England's bonuses added by previous versions of this mod
+
+
+v7.0.0
+Updated for Gathering Storm - all new civs now have a Sphere assignment
+
+
+v6.19
+ - Biomes have been renamed "Spheres"
+ - Netherlands is now in the Western Europe sphere 
+ - Restored Russia's Tundra bonuses. 
+ - Changed Boreal Europe to "Scandinavia"
+ - Changed Asian Expanse to "Continental Asia"
+ - Changed Asian Steppe to "Nomadic Asia"
+ - Changed Soviet Bloc to "Eastern Europe"
+ - Russia no longer has two Biomes/Spheres
+ - Added explicit support for SUK's Iceland. Sphere: Scandinavia
+ - New Sphere: British Isles. +2 Range during the Medieval and Ren eras
+ - The Asian Pacific sphere no longer has spy bonuses. Fisheries and Fishing boats now culture bomb. 250 free gold if you earn up to 3 Ocean tiles in a city
+ - Sub-Saharan Africa no longer experiences rotating combat bonuses. Now simply has -10 combat strength vs civs in a Golden Age
+ - Sub-Saharan Africa now gets +1 food to tiles adjacent to a forest or rainforest starting in the Classical era and lasting all game
+ - Clarified the nature of the Loyalty penalty experienced by Hellenic sphere civs
+ - Hellenic civs earn +6 points toward a great writer with each kill (up from +3)
+ 
+
+v6.18
+ - Cleaned up code that handles Arabia's trader changes. 
+ - Fixed a bug that caused Arabia's free Gold from foreign cities following religion not to function as expected
+ - Increased Science output from the Turtles resource to 2 (up from 1) to match other resources
+ - Asian Expanse civs now receive bonus territory any time they expend a great person charge prior to the dawn of the Medieval era
+ - Arabesque civ free Faith from deserts now correctly cuts off at the end of the Industrial era
+ 
+ 
+
+v6.14
+ - Biome Western Europe: The bonus promotion units receive begins with Medieval units and later
+ - Asian Pacific: Fixed a bug that caused the bonus combat strength not to apply correctly. Now requires +4 adjacencies to receive bonus.
+ - The Ikanda now unlocks earlier
+ - Asian Pacific now -2 trade routes
+
+
+v6.13
+ - Biome Western Europe: The bonus level now only applies to infantry units beginning in the Classical era (ie Swordsmen)
+ - The Mysterium resource is now harvestable
+ - Only one Ziggurat may be built per city
+ - Khmer is now an Asian Expanse civ 
+
+v6.12
+
+- Fertility Rites: Now +2 Food in capital city (down from +4)
+- Asian Expanse Biome: Now also provides +0.4 Food in cities with a governor for each point of Population
+- Asian Expanse Biome: Reduced bonus to Siege units to +50% (down from +100%)
+- Hellenic: Bonus great writer points now correctly cut off at the dawn of the Renaissance
+- Greece: No longer has a penalty to building districts while at war
+- Fixed a bug that caused the New World trait that lowers cost of buying tiles to only apply to America
+- New World Biome: All districts culture bomb
+
+
+v6.11
+ 
+- Polish anti-cavalry also ignore zone of control
+- Added 1 extra ring of radius to Georgia's government plaza aura
+
+v6.10
+
+- Polish anti-cavalry can now move after attacking. Reduced moves to +1 (down from +2)
+- Settlers no longer cost 50% of their normal cost
+
+
+v6.0.9
+- Introduction of Hell Mod
+- Air units no longer require Aerodromes
+
+
+v6.0.8
+- Updates to prevent crashes related to the Khmer when dlc is not installed
+
+v6.0.7
+ - Sacred Path now also applies its bonus to Forest
+ - God of the Open Sky now provides +25% XP for Siege units of any era
+ - Norway now only receives a free melee boat when founding a city (not conquering)
+ - France no longer receives +100% production towards spies
+ - England gets +1 trade route from RNDY built on other continents
+ - Nerfed bonus from Magus chops from 100% bonus to 30%
+ - Cleaned up some old code that was still applying the Aqueduct radial effect to all cities
+ - Aztec Templo Mayor rework
+ - Mapuche can now see all strategic resources without prerequisites
+ - Stone Circles provides Ancient Bedrock in all cities
+ - Brazil can debuff Loyalty with its special districts
+ - Georgia radius changes
+ - Germany no longer recieves gold for city captures 
+ - Monument to the Gods provides a free relic
+ - Moved starting science from China to Korea
+ 
+
+v6.0.6
+ - Fixed a bug that prevented the number of minimum strategic resources required to build a unit MyOption from working correctly
+ - Fixed a bug introduced in the March 2018 patch that prevented the No Move and Shoot tag from being removed from Siege units
+ - Added Farsight MyOption
+ - Added a MyOption that converts melee ships to ranged ships
+ - Added MyOptions to control Golden Age rules
+ - Barbarian Spearmen now suffer only a -4 combat penalty (reduced from -10)
+ 
+
+
+v4.0.1
+ - Fixed a bug in the text for Colonization 
+ 
+
+v4.0.0
+ - Introduced secret agenda bonuses
+ - Changed Colonization policy to +2 Culture in cities without Monuments, and +100% production towards Monuments (essentially, a policy that works itself out of a job)
+ - The MyOptions setting QUO_OPTION_CONVERT_GP_POLICIES_TO_DIPLO now defaults to 1 instead of 0
+ - Moved allyship much earlier on the civics tree
+ 
+v 3.15.3
+ - Pike units now convert their Combat value directly to their RangedCombat value (changed from +7 Combat -7 RangedCombat)
+ - Fixed a bug with the Khmer Sangha Monk unit not receiving its +2 combat per Aqueduct
+
+ 
+v3.15.2
+ - Lowered base combat strength of Sangha Monks to 28 (down from 35)
+ - Fixed a bug that could cause crashes for players who used the mod without Indonesia installed
+ - Sumerian Ziggurats now add +1 Science to adjacent non-river tiles 
+ - Brazilian Brazilwood camps now provide +1 Gold per point of Appeal of the tile (instead of flat +2 Gold)
+ - Brazilwood camps now provide Tourism at Flight 
+ - Added Brazil's ability to ignore negative appeal of Rainforest tiles to their description
+ - Fixed a bug with the Brazilian Revolution project lacking an icon
+ 
+ 
+ 
+v3.15.1
+ - Increased bonus GPP / turn for Japanese districts from +1 to +2
+ - Added +100% production toward Aqueducts for the Khmer 
+ - Khmer are now more likely to start near Rice or Wheat, at least if the database is to be believed
+ - The Khmer now generate a Sangha Monk, a unique unit similar to the Warrior Monk, when they construct or acquire an Aqueduct (changed from the generic Warrior Monk)
+ 
+ 
+ 
+ 
+v3.15.0
+ - Implementations for Khmer and Indonesia 
+
+
+3.14.9
+ - Increased bonus gold for foreign cities following Arabia's religion to 3 (up from 2)
+ - Removed the radial fresh water bonus from Aqueducts for performance reasons. This is now an exclusive feature of Roman Baths.
+ - Fixed a bug introduced in v3.14.6 that broke Russia's bonus to production for Industrial Zones adjacent to Tundra hills 
+ - Changed Theocracy additional govt bonus to "Cities with a Holy Site receive +2 Food, Production, and Faith"
+ - Slightly lowered AI bonus Culture in late eras when playing in Hardcore Science mode
+ - Ghandi now receives a free Settler upon building a Holy Site in the capital and a free Builder everywhere else
+ - Jadwiga may now purchase buildings for Commercial Hubs by expending Faith
+ - Germany now receives a Gold bonus equal to 6 times their Gold per turn when they capture a foreign city
+ 
+ 
+ 
+3.14.8
+ - Removed Palaces as a possible prereq for Walls because this somehow breaks the ability to build Walls
+
+ 
+ 
+3.14.6
+ - Changed Colonization to '+1 Culture in cities without Monuments, +1 Food in cities with Monuments.'
+ - Fixed a bug with Russia's bonus to Production from Tundra hills applying to all players instead of just Russia when Russia was in the game
+ - Changed formula for converting Anti-Cavalry to Ranged units by increasing their Combat values but decreasing their Ranged attack capability
+ - Increased bonus versus Cavalry of the Anti-Cavalry promotion 'Echelon' from +5 to +10
+ - Increased bonus versus Anti Cavalry of the Melee promotion 'Zweihander' from +7 to +15
+ - Barbarian Spearmen have -10 Combat Strength when ranged Anti-Calvary option is enabled
+ - Germany now receives +1 production from each additional district beginning with the third district built (changed from fourth)
+ - Germany now receives +2 moves for Heavy Cavalry beginning in the Modern era
+ - Palaces are now considered among the possible pre-reqs for building Walls. This is so that City States are able to construct them.
+ - Stonehenge now once again unlocks at Astrology. Justified by Astrology's increase in cost.
+  - Early release of MyScratchpad
+ 
+ 
+ 
+ 
+3.14.5
+ - The Facism government now also supplies Anti Cavalry with +2 range if the ranged anti-cav option is selected in the settings files
+ - Holy Wars now unlock at Theology
+ - Protectorate Wars now unlock at Political Philosophy
+ - Spain now receives +4 GPP toward prophets with each kill (up from 2 in previous patches) 
+ - Quadrimeme naval units bumped forward 1 tech, to Celestial navigation
+
+3.14.3
+
+
+Code for Steam edition: dfb06c74-086c-4a94-9618-3d96183a2d55
+
+
+v3.14.1
+ - Increased points toward Great Prophet Spain gets per kill to 4 (up from 2)
+
+
+v3.13.2
+ - Gorgo ability changed
+ - Removed Perciles free points toward diplo tokens when at peace
+ - Pericles now receives +20% toward districts when at peace with all major civs, and -10% toward districts when at war
+ - Russia now receives 2 free copies of Uranium starting in the Atomic era
+ - Spain now receives +1 movement for Siege units that start their turn within when in vicinity of a religious city
+ - Removed Norwegian Berzerker movement debuff. This unit can now move after attacking. 
+ - Fixed a bug with Settler production applying to all units
+ - Spain no longer receives +50% toward Holy Sites. Instead receives 3 points toward a Great Prophet for each kill.
+ - Swapper locations of Urban Planning and Colonization on the civic tree
+ 
+ 
+
+v3.13.1
+- Removed code that halved cost of Sewers since Firaxis already made this change
+- Each building built in a city center (Granary, Walls, Water Mill, Palace, Sewers etc) now increases that city's production toward Settlers by 10%
+- Fixed a bug in Goddess of the Hunt that caused the XP bonus to apply to all units and to be much higher than intended
+- Fixed a bug with Nubia's friendship bonus that allowed the XP bonus to apply to all units instead of only Ranged units
+- The Steel technology no longer provides Urban Defenses. Urban Defenses can still be acquired from the Communism government
+- Arabia now also receives +1 Science +2 gold per foreign city following religion (changed from +2 Science +0 Gold)
+- The ability that allows Pikemen to drain movement points from Calvary has been removed. 
+- Norway's Berzerkers now drain movement from adjacent units. Units reduced to 0 movement lose their turn.
+- Removed all changes to the Stave Church. This building is now identical to the new version Firaxis released in the Summer patch.
+
+
+v3.12.4
+ - Spain adjacency bonus for commercial hubs next to natural wonders is now 7 (up from 5)
+ - Nubia friendship bonus: +50% XP bonus for archery units
+ - Monument of the Gods provides +30% hammers toward wonders (down from +40%)
+ - Confirmation box for MyOptions settings
+ - Added generic friendship bonuses for mod civs, and a MyOption to disable 
+ - Changed Goddess of the Hunt from +1 Food from Camps and +15% Production toward Ranged units to +1 Food from Camps and +25% XP for Ranged Units
+
+v3.11.9
+
+- Added some safety code in case a player tries to load the mod without having installed the Aztec DLC. 
+- Fixed a bug with Egyptian sphinxes not properly applying the culture and faith bonus to desert hills again, and this time it actually works.
+
+
+v3.11.8 
+
+- The Shipbuilding tech now requires Celestial Navigation as a prereq. This is to limit an insane beeline into Cartography that can send AIs into the Rennaissance era with just 3 techs
+- Cartography now requires Military Tactics, for reason stated above.
+- Fixed a bug with Catherine's new ability to unveil foreign captitals that would cause the reveal not to work if you met the civ through normal methods prior to the unveil occuring.
+- Added a MyOption for Settlers escaping.
+- Rebalanced a number of technology prereqs in order to create a much more standard number of prereq techs prior to entering each era. This is to reduce beelining and make it more likely for Great People of the earlier eras to appear
+- Moved Tier 2 governments back to their original locations. Instead of this arrangement, Reformed Church no longer requires Divine Right
+- Fixed a bug in the description of Colonial Offices policy that listed the bonus to Population in foreign cities as 50%. In fact this policy was changed long ago to provide a 30% bonus but the text never updated.
+- Moved the Chateau back to its original location on the civics tree. This improvement has greatly improved since the addition of the culture bomb and no longer needs to unlock early.
+- Catherines extra spy is back to unlocking at Castles instead of Astrology. The very early Spy proved impossible to defend against in multiplayer.
+- The Mission unique improvement is back to unlocking at Exploration
+- The Colonization policy now provides +1 Culture to cities without Monuments. This replaces the original +50% to Production of Settlers ability, which I have had the goal of revising for a long time.
+- Changed the effect of the Brazilian Street Carnival to immediately provide +1 Population instead of a global population boost
+- Tweaked Sumeria's bonuses
+
+
+v3.11.7
+
+- Moved some code files that are no longer used in the mod to the Legacy folder so they will not confuse other programmers seeking to follow the intent of this mod.
+- AI Montezuma will now prioritize building the Templo Mayor national wonder. 
+- Arabia can no longer recruit Great Merchants by expending Gold or Faith. Changed because they have no Commercial Hubs to expend them in.
+- All of the existing "wild card only" purple cards have been converted to "diplomatic" green cards, so they can now be played in a diplo slot or a wildcard slot. I figured this would be controversial, so there is a  MyOption to disable this.
+- Split Oligarchy, Classical Republic, and Drama and Poetry up among various civic branches so all 3 no longer unlock at the same time.
+- Moved the Diplomatic League policy to State Workforce to ensure all governments with a green policy slot had alteast one green card to play
+- Classical Republic now also gives Settlers Stealth
+- Added a MyOption for the Multiplier amount for buildings like Factories that have a radial effect to cities within X tiles
+- Fixed a bug in Oligarchy government that gave troops +2 movement instead of +1
+- Fixed a bug that caused Egyptian sphinxes not to provide their radial bonus to desert hills
+- Fixed a bug where building a Stepwell as a civ other than India (because of a friendship gift or via American film studios) did not provide the water bonus
+- Updated the mechanism that trigger's Catherine de Medici discovery of other civilizations when they research Astrology. When this mechanism triggers, now a full introduction will be provided, and she will have visibility of the capital's location
+
+
+
+
+v3.11.6
+- Nerfed the range of Monarchy from 2 to 3
+- Implemented rising technology bonus for AI as it enters later eras
+- In hardcore mode, AIs now receive ramping bonuses in the Rennaisance and Modern eras to boost their tech rate and make them more competitive
+- In hardcore mode, science from tech and population are no longer 0. They are now set to 0.2 and 0.1 (still about 70% lower than the core game)
+- Removed the +1 science to all science buildings that originally existed in hardcore in favor of restoring part of the population bonus.
+- Fixed a bug with Egypt's ability description that accidentally listed the original description of the Iteru ability (involving faster construction along rivers) alongside the new ability
+- Increased the cost of Great People in later eras of the game. 
+- Added a MyOption to bypass the Great People increase
+- Added a MyOption for whether players can free-place wonders
+- Added a MyOption for whether wonders culture bomb when completed
+- Added a MyOption for the number of free tokens players receive for completing a wonder
+- Fixed a potential game crashing bug in the civ-only ruleset
+- Added backend support for sending MyOptions settings to the Localization database, so that changes made can be reflected in text strings
+- Updated friendship text to indicate what tech or civic you need to be able to build unique improvements that have a prereq
+- Removed Catherine de Medici's introductory animation. It was causing the screen to black out when activated by a human player
+
+
+v3.11.5
+
+- Added a description to Settlers explaining that they escape to the nearest city if captured.
+- Egypt now receives its free relics upon researching Humanism instead of right away
+- Egypt now unlocks its free relic slots at Medieval Faires instead of receiving them right away
+- Changed Oligarchy government bonus to "Melee units have +1 moves in unclaimed territory."
+- Restored Battering Ram tech unlock to unmodded values (i.e. unlocks at Masonry)
+
+
+
+
+
+-- COMMON SELECTS
+
+-- PROMOTIONS TO MODIFIERS
+
+select * from unitpromotions
+left join unitpromotionmodifiers on unitpromotionmodifiers.UnitPromotionType = unitpromotions.UnitPromotionType
+left join modifiers on modifiers.ModifierId = unitpromotionmodifiers.ModifierId
+left join modifierarguments on modifierarguments.ModifierId = modifiers.ModifierId
+where unitpromotions.UnitPromotionType like '%eche%'

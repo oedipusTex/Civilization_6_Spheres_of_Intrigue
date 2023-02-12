@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 11/25/2016 1:28:54 PM -->
+<GameData>
+
+	<LocalizedText>
+		<Row Tag="LOC_QUO_UNIT_INDONESIA_WARRIOR_MONK_NAME" Language="en_US">
+			<Text>Sangha Monk</Text>
+		</Row>
+	</LocalizedText>
+	
+		<LocalizedText>
+		<Row Tag="LOC_QUO_UNIT_INDONESIA_WARRIOR_MONK_DESCRIPTION" Language="en_US">
+			<Text>Unique unit for the Khmer. Summoned by the construction of Aqueducts. Gains +2 [ICON_STRENGTH] in combat for each Aqueduct you control.</Text>
+		</Row>
+	</LocalizedText>
+
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_PALACE_ANNEX_NAME" Language="en_US">
+			<Text>Palace Annex</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_KHMER_RIVER_HOLY_ADJ" Language="en_US">
+			<Text>+2 [ICON_FAITH] from Rivers</Text>
+		</Row>
+	</LocalizedText>
+	
+	<LocalizedText>
+		<Row Tag="QUO_LOC_NUBIA_STRENGTH" Language="en_US">
+			<Text>-3 from Nubia</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_NORTH_AFRICA_STRENGTH" Language="en_US">
+			<Text>-5 from Out of Sphere Unit</Text>
+		</Row>
+	</LocalizedText>
+	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_TRAIT_FRIEND_GIFT_NAME" Language="en_US">
+			<Text>Friendship Gift</Text>
+		</Row>
+	</LocalizedText>
+
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_ASIAN_PACIFIC_BAD_COMBAT" Language="en_US">
+			<Text>-5 from Low Appeal</Text>
+		</Row>
+	</LocalizedText>
+	
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_ASIAN_PACIFIC_APPEAL_COMBAT_BONUS_2" Language="en_US">
+			<Text>+4 from Appeal</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_ASIAN_PACIFIC_APPEAL_COMBAT_BONUS_3" Language="en_US">
+			<Text>+6 from Appeal</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_ASIAN_PACIFIC_APPEAL_COMBAT_BONUS_4" Language="en_US">
+			<Text>+8 from Appeal</Text>
+		</Row>
+	</LocalizedText>
+
+	<LocalizedText>
+		<Row Tag="QUO_PROJECT_BIOME_ASIAN_EXPANSE_MOVE_CAPITAL_NAME" Language="en_US">
+			<Text>Asian Nomadic Migration</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_PROJECT_BIOME_ASIAN_EXPANSE_MOVE_CAPITAL_DESCRIPTION" Language="en_US">
+			<Text>Moves the capital to this city, establishing Bedrock.</Text>
+		</Row>
+	</LocalizedText>
+
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOVERNOR_MARINER_NAME" Language="en_US">
+			<Text>Sivit</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_LOC_QUO_GOVERNOR_MARINER_NAME" Language="en_US">
+			<Text>Nivet</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_GOVERNOR_MARINER_DESCRIPTION" Language="en_US">
+			<Text>A master of coastal cities.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOVERNOR_MARINER_TITLE" Language="en_US">
+			<Text>The Mariner</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOVERNOR_MARINER_TITLE_SHORT" Language="en_US">
+			<Text>Mariner</Text>
+		</Row>
+	</LocalizedText>
+
+	
+	<LocalizedText>
+		<Row Tag="QUO_GOV_PROMO_MARINER_1" Language="en_US">
+			<Text>Fishing Boats</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_MARINER_1_NAME" Language="en_US">
+			<Text>Fishing Boats</Text>
+		</Row>
+	</LocalizedText>		
+		<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_MARINER_1_DESCRIPTION" Language="en_US">
+			<Text>+1[ICON_FOOD] Food from Coastal tiles.</Text>
+		</Row>
+	</LocalizedText>
+
+	<LocalizedText>
+		<Row Tag="QUO_GOV_PROMO_MARINER_2" Language="en_US">
+			<Text>Shining Seas</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_MARINER_2_NAME" Language="en_US">
+			<Text>Shining Seas</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_MARINER_2_DESCRIPTION" Language="en_US">
+			<Text>+4 [ICON_SCIENCE] Science from deep water Ocean tiles.</Text>
+		</Row>
+	</LocalizedText>	
+	
+	<LocalizedText>
+		<Row Tag="QUO_GOV_PROMO_MARINER_3" Language="en_US">
+			<Text>Golden Waves</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_MARINER_3_NAME" Language="en_US">
+			<Text>Golden Waves</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_MARINER_3_DESCRIPTION" Language="en_US">
+			<Text>Internal trade routes ending here provide +8 [ICON_GOLD] Gold to the origin city.</Text>
+		</Row>
+	</LocalizedText>
+	
+	
+	<LocalizedText>
+		<Row Tag="QUO_GOV_PROMO_MARINER_4" Language="en_US">
+			<Text>Seaside Shipments</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_MARINER_4_NAME" Language="en_US">
+			<Text>Seaside Shipments</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_MARINER_4_DESCRIPTION" Language="en_US">
+			<Text>+0.75 [ICON_PRODUCTION] Production per citizen in this city.</Text>
+		</Row>
+	</LocalizedText>
+	
+
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOVERNOR_DRUID_NAME" Language="en_US">
+			<Text>Iche</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_LOC_QUO_GOVERNOR_DRUID_NAME" Language="en_US">
+			<Text>Uche</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_GOVERNOR_DRUID_DESCRIPTION" Language="en_US">
+			<Text>A master of nature.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOVERNOR_DRUID_TITLE" Language="en_US">
+			<Text>The Druid</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOVERNOR_DRUID_TITLE_SHORT" Language="en_US">
+			<Text>Druid</Text>
+		</Row>
+	</LocalizedText>	
+
+
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_DRUID_FAITH_NAME" Language="en_US">
+			<Text>Grottos</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_DRUID_FAITH_DESCRIPTION" Language="en_US">
+			<Text>+1 [ICON_FAITH]Faith from each passable feature. Missionaries and Apostles receive an extra charge.</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_DRUID_POP_FAITH_NAME" Language="en_US">
+			<Text>Soothsayers</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_DRUID_POP_FAITH_DESCRIPTION" Language="en_US">
+			<Text>+1 [ICON_FAITH]Faith, +0.5[ICON_FOOD] Food per citizen in this city.</Text>
+		</Row>
+	</LocalizedText>
+
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_DRUID_APPEAL_NAME" Language="en_US">
+			<Text>Charms of Nature</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_GOV_PROMO_DRUID_APPEAL_DESCRIPTION" Language="en_US">
+			<Text>+1[ICON_CULTURE]Culture on tiles with Charming appeal or better. Additional +1[ICON_CULTURE]Culture on tiles with Breathtaking appeal or better.</Text>
+		</Row>
+	</LocalizedText>
+
+	
+
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_AFRICA_COMBAT_GOOD_MINOR" Language="en_US">
+			<Text>+10 from Era of Fortune</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_AFRICA_COMBAT_GOOD_MAJOR" Language="en_US">
+			<Text>+10 from Era of Major Fortune</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_AFRICA_COMBAT_BAD_MINOR" Language="en_US">
+			<Text>-10 from Opponent in Golden Age</Text>
+		</Row>
+	</LocalizedText>	
+		<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_AFRICA_COMBAT_BAD_MAJOR" Language="en_US">
+			<Text>-10 from Era of Major Misfortune</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_UK_WOUNDED_PENALTY" Language="en_US">
+			<Text>-5 vs Wounded Fortified Opponent</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_BIOME_ASIAN_PACIFIC_RELIGION_SPREADER_NAME" Language="en_US">
+			<Text>Holy Aura</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_BIOME_ASIAN_PACIFIC_RELIGION_SPREADER_DESCRIPTION" Language="en_US">
+			<Text>When this unit captures a city, your religion is automatically spread there.</Text>
+		</Row>
+	</LocalizedText>	
+
+	<LocalizedText>
+		<Row Tag="LOC_UNIT_QUO_BIOME_ASIAN_PACIFIC_MONK_NAME" Language="en_US">
+			<Text>Wandering Monk</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_UNIT_QUO_BIOME_ASIAN_PACIFIC_MONK_DESCRIPTION" Language="en_US">
+			<Text>An early unit only available to Asian Pacific civilizations. This unit is actually an early Siege unit capable of a Range 1 Bombard attack that damages cities.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR_NAME" Language="en_US">
+			<Text>Pacific Harbor</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR_DESCRIPTION" Language="en_US">
+			<Text>This Asian Pacific variation of the Harbor district does not require a connection to land. +1 [ICON_GREATPERSON] point towards Great Generals. +2[ICON_GOLD]Gold for adjacent reefs.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_ASIAN_PACIFIC_HARBOR_ADJ_DESCRIPTION" Language="en_US">
+			<Text>+1[ICON_CULTURE]Culture per adjacent sea resource</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_ASIAN_PACIFIC_HARBOR_ADJ_REEF_DESCRIPTION" Language="en_US">
+			<Text>+1[ICON_CULTURE]Culture per adjacent reef</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BIOME_ASIAN_PACIFIC_HARBOR_BASE_DESCRIPTION" Language="en_US">
+			<Text>+2[ICON_CULTURE]Culture base</Text>
+		</Row>
+	</LocalizedText>
+	
+	
+	<LocalizedText>
+		<Row Tag="QUO_LOC_ABILITY_ANTI_MELEE_MODIFIER_DESCRIPTION" Language="en_US">
+			<Text>+10 against infantry</Text>
+		</Row>
+	</LocalizedText>
+	
+	<LocalizedText>
+		<Row Tag="QUO_LOC_KURGAN_ADJ" Language="en_US">
+			<Text>+2 per adjacent Kurgan</Text>
+		</Row>
+	</LocalizedText>	
+	<LocalizedText>
+		<Row Tag="LOC_RESOURCE_QUO_SCYTHIAN_MYSTERIUM_NAME" Language="en_US">
+			<Text>Mysterium</Text>
+		</Row>
+	</LocalizedText>
+	
+	<LocalizedText>
+		<Row Tag="QUO_LOC_ZIG_ADJ" Language="en_US">
+			<Text>+1 per adjacent Ziggurat</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_GREATWALL_ADJ" Language="en_US">
+			<Text>+1 for every 2 adjacent pieces of Great Wall</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_SPHINX_CULT_ADJ" Language="en_US">
+			<Text>+1 [ICON_CULTURE] per adjacent Sphinx</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_SPHINX_FAI_ADJ" Language="en_US">
+			<Text>+1 [ICON_FAITH] per adjacent Sphinx</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_RUSSIA_IZ_ADJACENCY" Language="en_US">
+			<Text>+1 [ICON_PRODUCTION] per adjacent Tundra Hill</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_SPAIN_ADJACENCY_COM" Language="en_US">
+			<Text>+7 [ICON_GOLD] per adjacent Natural Wonder</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_EXTRA_VISION" Language="en_US">
+			<Text>+1 Vision</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BUILDING_TLACHTLI_DESCRIPTION" Language="en_US">
+			<Text> [ICON_CAPITAL] (Quo Mod: Provides extra Hit Points and the ability to attack for the City Center.)</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_RESOURCE_TURQUOISE" Language="en_US">
+			<Text>Turquoise</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_TEMPLO_MAYOR_NAME" Language="en_US">
+			<Text>Templo Mayor</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_TEMPLO_MAYOR_DESCRIPTION" Language="en_US">
+			<Text>A unique World Wonder. Only the Aztecs may build it. Adds +50% [ICON_PRODUCTION] toward building Tlachtli, removes the Aztec Builder-charge penalty, and provides a free Builder unit whenever an Entertainment Complex is completed. The city that hosts the building loses -4 [ICON_FOOD] Food per turn.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_PROJECT_BRAZILWOOD_NAME" Language="en_US">
+			<Text>The Brazilian Revolution</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_PROJECT_BRAZILWOOD_SHORT_NAME" Language="en_US">
+			<Text>The Brazilian Revolution</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_PROJECT_BRAZILWOOD_DESCRIPTION" Language="en_US">
+			<Text>Only Brazil can build this. Requires a city with a Street Carnival. Provides a huge one-time burst of [ICON_GREATPERSON] Great People points and unlocks the ability for Builders to construct Brazilwood camps.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_IMPROVEMENT_BRAZILWOOD_CAMP_NAME" Language="en_US">
+			<Text>Brazilwood Camp</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_IMPROVEMENT_BRAZILWOOD_CAMP_DESCRIPTION" Language="en_US">
+			<Text>Extra Culture based on the Appeal of this tile.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_MOD_MELEE_NAVAL_VS_DISTRICTS_PREVIEW" Language="en_US">
+			<Text>+12 [ICON_STRENGTH] Strength versus Districts</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_ABI_MELEE_NAVAL_VS_DISTRICTS_NAME" Language="en_US">
+			<Text>Coastal Invasion</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_ABI_MELEE_NAVAL_VS_DISTRICTS_DESCRIPTION" Language="en_US">
+			<Text>+8 [ICON_STRENGTH] Strength versus Districts</Text>
+		</Row>
+	</LocalizedText>
+	
+	
+	
+	
+<!-- 	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_AIRPOWER_DOTARD_NAME" Language="en_US">
+			<Text>City State Protector (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_CIVILIZED_DOTARD_NAME" Language="en_US">
+			<Text>Civilized (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+	
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_CITY_STATE_ALLY_DOTARD_NAME" Language="en_US">
+			<Text>City State Ally (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+	
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_CULTURED_DOTARD_NAME" Language="en_US">
+			<Text>Cultured (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_DARWINIST_DOTARD_NAME" Language="en_US">
+			<Text>Darwinist (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_DEVOUT_DOTARD_NAME" Language="en_US">
+			<Text>Devout (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_ENVIRONMENTALIST_DOTARD_NAME" Language="en_US">
+			<Text>Environmentalist (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_EXPLOITATIVE_DOTARD_NAME" Language="en_US">
+			<Text>Exploitative (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_EXPLORER_DOTARD_NAME" Language="en_US">
+			<Text>Explorer (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_FUN_LOVING_DOTARD_NAME" Language="en_US">
+			<Text>Fun Loving (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_GREAT_PERSON_ADVOCATE_DOTARD_NAME" Language="en_US">
+			<Text>Great Person Advocate (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_IDEOLOGUE_DOTARD_NAME" Language="en_US">
+			<Text>Ideologue (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_INDUSTRIALIST_DOTARD_NAME" Language="en_US">
+			<Text>Industrialist (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_MONEY_GRUBBER_DOTARD_NAME" Language="en_US">
+			<Text>Money Grubber (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_NUKE_LOVER_DOTARD_NAME" Language="en_US">
+			<Text>Nuke Lover (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_PARANOID_DOTARD_NAME" Language="en_US">
+			<Text>Paranoid (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_POPULOUS_DOTARD_NAME" Language="en_US">
+			<Text>Populous (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_STANDING_ARMY_DOTARD_NAME" Language="en_US">
+			<Text>Standing Army (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_TECHNOPHILE_DOTARD_NAME" Language="en_US">
+			<Text>Technophile (DOTARD)</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_WONDER_ADVOCATE_DOTARD_NAME" Language="en_US">
+			<Text>Wonder Advocate (DOTARD)</Text>
+		</Row>
+	</LocalizedText> -->
+
+	
+	
+<!-- 	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_AIRPOWER_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Tries to build up air power. Admires civilizations with greater air power. Dislikes civilizations with weaker air power. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +3 [ICON_PRODUCTION] in cities with an Aerodrome.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_CITY_STATE_ALLY_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Likes civilizations that aren't competing for the same city-state allegiance. Dislikes civilizations that are directly competing for city-state allegiance. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +1 points towards city state tokens per turn.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_CITY_STATE_PROTECTOR_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Emphasizes protectorate wars. Admires civilizations that start protectorate wars. Dislikes civilizations that attack city states. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +1 points towards city state tokens per turn.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_CIVILIZED_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Hates barbarians. Likes civilizations that clear out barbarian outposts. Does not like civilizations that ignores barbarian outposts. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +1 Trade Routes.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_CULTURED_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Tries to build up [ICON_Culture] Culture, and likes civilizations that also focus on [ICON_Culture] Culture. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will increase Cultural Eurekas by 5%.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_DARWINIST_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Likes to see civilizations at war, and believes in constant struggle. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will grant 2 points toward a Great General with every kill.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_DEVOUT_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Tries to build up [ICON_Faith] Faith, and likes civilizations that also focus on [ICON_Faith] Faith. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +3[ICON_FAITH]Faith from Holy Sites.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_ENVIRONMENTALIST_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Builds National Parks, doesn't clear features, plants forests. Likes civilizations that plant forests or found National Parks. Dislikes civilizations that clear features. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +1[ICON_CULTURE] to Camps.</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_EXPLOITATIVE_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Clears all features and improves all possible tiles. Likes civilizations with a high percentage of improved tiles. Dislikes civilizations with low percentage of improved tiles or that found National Parks. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide Builders with +1 charge.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_EXPLORER_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Tries to explore the map, and likes civilizations that have explored less of the map than itself and dislikes civilizations that have explored more of the map than itself. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +1 movement to Recon units.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_FUN_LOVING_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Tries to make the citizens in each city as happy as possible. Likes civilizations that also develop in this fashion. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +1 amenity to cities with an Entertainment Complex.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_GREAT_PERSON_ADVOCATE_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Likes civilizations who are not competing for Great People, and will recruit Great People whenever possible. Dislikes losing a Great Person to another civilization. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +1 charge to Great Engineers.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_IDEOLOGUE_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Favors civilizations with the same type of government, dislikes civilizations that have different governments, and really dislikes civilizations with different governments of the same era as its own. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +1[ICON_CULTURE] from great works of writing.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_INDUSTRIALIST_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Tries to build up industry, and likes civilizations that also focus on [ICON_Production] Production. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +2[ICON_PRODUCTION] Production to cities with an Industrial Zone.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_MONEY_GRUBBER_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Tries to have the highest possible [ICON_Gold] Gold per turn income. Respects other high income civilizations. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +2[ICON_GOLD] Gold to cities with a Commercial Hub.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_NUKE_LOVER_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Has no hesitation to use nuclear weapons. Respects other civilizations that project strength with nuclear weapons. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will allow you to purchase Nuclear Submarines with [ICON_FAITH]Faith.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_PARANOID_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Likes civilizations who pose no threat. Dislikes civilizations with strong militaries or ones with nearby cities. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will raise defense against enemy spies by 1 level.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_POPULOUS_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Tries to have the highest overall population.  Respects other high population civilizations. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +2[[ICON_FOOD] to cities with a Neighborhood.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_STANDING_ARMY_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Always tries to keep a large standing army. Respects other civilizations with large armies. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +2[ICON_FOOD] to cities with Encampments.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_TECHNOPHILE_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Tries to build up [ICON_Science] Science, and likes civilizations that also focus on [ICON_Science] Science. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +5% towards scientific Eurekas.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_AGENDA_WONDER_ADVOCATE_DOTARD_DESCRIPTION" Language="en_US">
+			<Text>Likes civilizations not competing for wonders, and builds wonders whenever possible. Dislikes losing a wonder to another civilization. [NEWLINE][NEWLINE][ICON_CAPITAL] Denouncing will provide +10%[ICON_PRODUCTION] towards World Wonders.</Text>
+		</Row>
+	</LocalizedText> -->
+	
+	
+	
+	
+	
+	
+	
+	
+</GameData>
+

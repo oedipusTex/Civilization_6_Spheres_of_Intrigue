@@ -1,0 +1,1105 @@
+LEGACY CODE
+
+
+-- pacific monks
+
+
+--the monk 
+INSERT INTO Types 
+	(Type, 					Kind)
+VALUES 	('QUO_TRAIT_ASIAN_PACIFIC_MONK', 		'KIND_TRAIT') ;
+
+INSERT INTO Traits 
+	(TraitType,			Name,						Description,						InternalOnly)
+VALUES ('QUO_TRAIT_ASIAN_PACIFIC_MONK',	'LOC_QUO_TRAIT_ASIAN_PACIFIC_MONK_NAME',		NULL,		0) ;
+
+INSERT INTO CivilizationTraits 
+	(CivilizationType, 		TraitType)
+SELECT tempCivilizationType,	'QUO_TRAIT_ASIAN_PACIFIC_MONK' 
+FROM tblTempCivilizationTraits 
+WHERE tempTraitType='QUO_TRAIT_BIOME_ASIAN_PACIFIC' 
+	AND EXISTS (SELECT 1 FROM Civilizations WHERE CivilizationType = tempCivilizationType)
+		AND EXISTS (SELECT 1 FROM tblQuoOptions WHERE OptionId='QUO_OPTION_ENABLE_BIOMES' AND Value > 0) ;
+
+
+
+
+INSERT INTO Types
+	(Type, 				Kind)
+VALUES 	('QUO_PROMOTION_CLASS_BIOME_ASIAN_PACIFIC_MELEE',	'KIND_PROMOTION_CLASS'	) ;
+
+
+INSERT INTO UnitPromotionClasses (PromotionClassType,Name)
+VALUES ('QUO_PROMOTION_CLASS_BIOME_ASIAN_PACIFIC_MELEE','QUO_PROMOTION_CLASS_BIOME_ASIAN_PACIFIC_MELEE_NAME');
+
+
+CREATE TABLE tblBIOME_ASIAN_PACIFICPromosToClone AS
+SELECT * FROM UNITPROMOTIONS where unitpromotiontype in ('PROMOTION_RANGER','PROMOTION_MONK_TWILIGHT_VEIL','PROMOTION_MONK_DANCING_CRANE','PROMOTION_SPYGLASS','PROMOTION_CHOKE_POINTS');
+
+
+INSERT INTO Types
+	(Type, 				Kind)
+SELECT 	UnitPromotionType || '_BIOME_ASIAN_PACIFIC_CLONE',	'KIND_PROMOTION_CLASS'	
+FROM tblBIOME_ASIAN_PACIFICPromosToClone;
+
+
+
+-- unique promotions
+INSERT INTO Types
+		(Type, 				Kind)
+VALUES 	('QUO_BIOME_ASIAN_PACIFIC_RELIGION_SPREADER',	'KIND_PROMOTION_CLASS');
+
+
+INSERT INTO UnitPromotions (
+							   UnitPromotionType,
+                               Name,
+                               Description,
+                               Level,
+                               Specialization,
+                               PromotionClass,
+                               [Column]
+                           )
+                           SELECT
+                               UnitPromotionType || '_BIOME_ASIAN_PACIFIC_CLONE',
+                               Name,
+                               Description,
+                               Level,
+                               Specialization,
+                               'QUO_PROMOTION_CLASS_BIOME_ASIAN_PACIFIC_MELEE',
+                               [Column]
+							FROM tblBIOME_ASIAN_PACIFICPromosToClone;
+                           
+-- fix the positioning
+
+UPDATE UnitPromotions SET Level = 2 WHERE UnitPromotionType='PROMOTION_CHOKE_POINTS_BIOME_ASIAN_PACIFIC_CLONE';
+
+
+-- religion spreader promotion
+INSERT INTO UnitPromotions (
+							   UnitPromotionType,
+                               Name,
+                               Description,
+                               Level,
+                               Specialization,
+                               PromotionClass,
+                               [Column]
+                           )
+                           VALUES(
+                               'QUO_BIOME_ASIAN_PACIFIC_RELIGION_SPREADER',
+                               'QUO_BIOME_ASIAN_PACIFIC_RELIGION_SPREADER_NAME',
+                               'QUO_BIOME_ASIAN_PACIFIC_RELIGION_SPREADER_DESCRIPTION',
+                               2,
+                               NULL,
+                               'QUO_PROMOTION_CLASS_BIOME_ASIAN_PACIFIC_MELEE',
+                               1
+							);
+
+-- Borrow the religion spread ability from Spain
+INSERT INTO UnitPromotionModifiers
+	(UnitPromotionType, Modifierid)
+VALUES('QUO_BIOME_ASIAN_PACIFIC_RELIGION_SPREADER','CONQUISTADOR_CITY_RELIGION_COMBAT');
+
+		
+ 
+ 
+INSERT INTO Types
+	(Type, 				Kind)
+VALUES 	('UNIT_QUO_BIOME_ASIAN_PACIFIC_MONK',		'KIND_UNIT'	) ;
+
+INSERT INTO Units (
+                      UnitType,
+                      Name,
+                      BaseSightRange,
+                      BaseMoves,
+                      Combat,
+                      RangedCombat,
+                      Range,
+                      Bombard,
+                      Domain,
+                      FormationClass,
+                      Cost,
+                      PopulationCost,
+                      FoundCity,
+                      FoundReligion,
+                      MakeTradeRoute,
+                      EvangelizeBelief,
+                      LaunchInquisition,
+                      RequiresInquisition,
+                      BuildCharges,
+                      ReligiousStrength,
+                      ReligionEvictPercent,
+                      SpreadCharges,
+                      ReligiousHealCharges,
+                      ExtractsArtifacts,
+                      Description,
+                      Flavor,
+                      CanCapture,
+                      CanRetreatWhenCaptured,
+                      TraitType,
+                      AllowBarbarians,
+                      CostProgressionModel,
+                      CostProgressionParam1,
+                      PromotionClass,
+                      InitialLevel,
+                      NumRandomChoices,
+                      PrereqTech,
+                      PrereqCivic,
+                      PrereqDistrict,
+                      PrereqPopulation,
+                      LeaderType,
+                      CanTrain,
+                      StrategicResource,
+                      PurchaseYield,
+                      MustPurchase,
+                      Maintenance,
+                      Stackable,
+                      AirSlots,
+                      CanTargetAir,
+                      PseudoYieldType,
+                      ZoneOfControl,
+                      AntiAirCombat,
+                      Spy,
+                      WMDCapable,
+                      ParkCharges,
+                      IgnoreMoves,
+                      TeamVisibility,
+                      ObsoleteTech,
+                      ObsoleteCivic,
+                      MandatoryObsoleteTech,
+                      MandatoryObsoleteCivic,
+                      AdvisorType,
+                      EnabledByReligion,
+                      TrackReligion
+                  )
+                  VALUES(
+                      'UNIT_QUO_BIOME_ASIAN_PACIFIC_MONK',
+                      'LOC_UNIT_QUO_BIOME_ASIAN_PACIFIC_MONK_NAME',
+                      2, -- BaseSightRange,
+                      4, -- BaseMoves,
+                      35, -- Combat
+                      0, -- RangedCombat,
+                      0, -- Range,
+                      0, -- Bombard,
+                      'DOMAIN_LAND', -- Domain,
+                      'FORMATION_CLASS_LAND_COMBAT', -- FormationClass,
+                      '75', -- Cost,
+                      NULL, -- PopulationCost,
+                      0, -- FoundCity,
+                      0, -- FoundReligion,
+                      0, -- MakeTradeRoute,
+                      0, -- EvangelizeBelief,
+                      0, -- LaunchInquisition,
+                      0, -- RequiresInquisition,
+                      0, -- BuildCharges,
+                      0, -- ReligiousStrength,
+                      0, -- ReligionEvictPercent,
+                      0, -- SpreadCharges,
+                      0, -- ReligiousHealCharges,
+                      0, -- ExtractsArtifacts,
+                      'LOC_UNIT_QUO_BIOME_ASIAN_PACIFIC_MONK_DESCRIPTION',
+                      NULL, -- Flavor,
+                      1, -- CanCapture,
+                      0, -- CanRetreatWhenCaptured,
+                      'QUO_TRAIT_ASIAN_PACIFIC_MONK', -- TraitType
+                      0, -- AllowBarbarians,
+                      'NO_COST_PROGRESSION', -- CostProgressionModel,
+                      0, -- CostProgressionParam1,
+                      'PROMOTION_CLASS_MONK', -- PromotionClass,
+                      0, -- InitialLevel,
+                      0, -- NumRandomChoices,
+                      NULL, -- PrereqTech,
+                      NULL, -- PrereqCivic,
+                      NULL, -- PrereqDistrict,
+                      NULL, -- PrereqPopulation,
+                      NULL, -- LeaderType,
+                      1, -- CanTrain,
+                      NULL, -- StrategicResource,
+                      'YIELD_FAITH', --PurchaseYield,
+                      1, -- MustPurchase,
+                      2, -- Maintenance,
+                      0, -- Stackable,
+                      0, -- AirSlots,
+                      0, -- CanTargetAir,
+                      NULL, -- PseudoYieldType,
+                      1, -- ZoneOfControl,
+                      0, -- AntiAirCombat,
+                      0, -- Spy,
+                      0, -- WMDCapable,
+                      0, -- ParkCharges,
+                      0, -- IgnoreMoves,
+                      0, -- TeamVisibility,
+                      NULL, -- ObsoleteTech,
+                      NULL, -- ObsoleteCivic,
+                      NULL, -- MandatoryObsoleteTech,
+                      NULL, -- MandatoryObsoleteCivic,
+                      'ADVISOR_GENERIC', -- AdvisorType,
+                      1, -- EnabledByReligion,
+                      1 --TrackReligion
+                  );
+
+
+				  
+/* INSERT INTO UnitUpgrades
+	(Unit, UpgradeUnit)
+VALUES ('UNIT_QUO_BIOME_ASIAN_PACIFIC_MONK','UNIT_WARRIOR');
+ */
+
+INSERT INTO UnitReplaces
+	('CivUniqueUnitType','ReplacesUnitType')
+VALUES 	('UNIT_QUO_BIOME_ASIAN_PACIFIC_MONK', 'UNIT_WARRIOR_MONK');
+
+
+
+-- ENABLE THE MONK
+INSERT INTO Modifiers
+	(ModifierID, 			ModifierType, 					RunOnce, 	Permanent, 	OwnerRequirementSetId, 	SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_ENABLE_WARRIOR_MONK', 	'MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_UNIT', 	0, 		0, 		NULL,			NULL) ;
+
+
+INSERT INTO ModifierArguments
+	(ModifierID,			Name,		Type, 				Value,			Extra)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_ENABLE_WARRIOR_MONK', 	'UnitType', 	'ARGTYPE_IDENTITY', 		'UNIT_QUO_BIOME_ASIAN_PACIFIC_MONK',			NULL) ;
+
+
+INSERT INTO TraitModifiers
+	(TraitType, 				ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_PACIFIC',	'QUO_BIOME_ASIAN_PACIFIC_ENABLE_WARRIOR_MONK') ;
+
+
+
+
+
+-- No early trade routes
+-- Removed in v8.0.0
+
+/* INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_ASIAN_PACIFIC_DEBUFF_ERA', 	'REQUIREMENTSET_TEST_ALL')  ;
+
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	-- ('QUO_REQSET_BIOME_ASIAN_PACIFIC_DEBUFF_ERA', 	'QUO_REQ_BIOME_ASIAN_PACIFIC_DEBUFF_START') ,
+		('QUO_REQSET_BIOME_ASIAN_PACIFIC_DEBUFF_ERA', 	'QUO_REQ_GLOBAL_ERA_NOT_YET_MEDIEVAL') ;
+
+INSERT INTO Modifiers
+	(ModifierID, 			ModifierType, 					RunOnce, 	Permanent, 	OwnerRequirementSetId, 	SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_TRADE_ROUTE', 	'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY', 	0, 		0, 		NULL,			'QUO_REQSET_BIOME_ASIAN_PACIFIC_DEBUFF_ERA') ;
+
+
+INSERT INTO ModifierArguments
+	(ModifierID,			Name,		Type, 				Value,			Extra)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_TRADE_ROUTE', 	'Amount', 	'ARGTYPE_IDENTITY', 		'-99',			NULL) ;
+
+
+INSERT INTO TraitModifiers
+	(TraitType, 				ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_PACIFIC',	'QUO_BIOME_ASIAN_PACIFIC_TRADE_ROUTE') ;
+ */
+
+ 
+ 
+ -- Free monk scout
+-- Not used in released version
+
+/* INSERT INTO Modifiers
+	(ModifierID, 			ModifierType, 					RunOnce, 	Permanent, 	OwnerRequirementSetId, 	SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_FREE_SCOUT_MONK', 	'MODIFIER_PLAYER_BUILT_CITIES_GRANT_FREE_UNIT', 	0, 		0, 		NULL,			'PLAYER_HAS_ONE_CITY') ;
+
+
+INSERT INTO ModifierArguments
+	(ModifierID,			Name,			Type, 			Value,			Extra)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_FREE_SCOUT_MONK', 	'Amount', 	'ARGTYPE_IDENTITY', 	'1',	NULL) ,
+		('QUO_BIOME_ASIAN_PACIFIC_FREE_SCOUT_MONK', 	'UnitType', 	'ARGTYPE_IDENTITY', 	'UNIT_QUO_BIOME_ASIAN_PACIFIC_MONK',	NULL) ;
+		
+		
+INSERT INTO TraitModifiers
+	(TraitType, 				ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_PACIFIC',		'QUO_BIOME_ASIAN_PACIFIC_FREE_SCOUT_MONK')  ; */
+		
+		
+		
+
+-- Can build Fishery improvement without needing a governor
+/* INSERT INTO Modifiers 
+	(ModifierId, 			ModifierType, 				RunOnce, 	Permanent, 	OwnerRequirementSetId, 	SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_ENABLE_FISHERY', 	'MODIFIER_PLAYER_ADJUST_VALID_IMPROVEMENT', 	0, 		0, 		NULL, 			NULL) ;
+
+
+INSERT INTO ModifierArguments
+	(ModifierId, 				Name, 			Type, 			Value, 				Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_ENABLE_FISHERY', 	'ImprovementType', 	'ARGTYPE_IDENTITY', 	'IMPROVEMENT_FISHERY',		NULL, 	NULL) ;
+
+
+INSERT INTO TraitModifiers
+	(TraitType, 					ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_PACIFIC',			'QUO_BIOME_ASIAN_PACIFIC_ENABLE_FISHERY') ; */
+
+
+-- Fisheries culture bomb
+/* INSERT INTO Modifiers
+	(ModifierID, 			ModifierType, 					RunOnce, 	Permanent, 	OwnerRequirementSetId, 	SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_FISH_BOMB', 	'MODIFIER_PLAYER_ADD_CULTURE_BOMB_TRIGGER', 	0, 		0, 		NULL,			NULL) ,
+		('QUO_BIOME_ASIAN_PACIFIC_FISH_BOMB_2', 	'MODIFIER_PLAYER_ADD_CULTURE_BOMB_TRIGGER', 	0, 		0, 		NULL,			NULL)  ;
+
+INSERT INTO ModifierArguments
+	(ModifierID,			Name,			Type, 			Value,			Extra)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_FISH_BOMB', 	'DistrictType', 	'ARGTYPE_IDENTITY', 	'QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR',	NULL) ,
+		('QUO_BIOME_ASIAN_PACIFIC_FISH_BOMB_2', 	'ImprovementType', 	'ARGTYPE_IDENTITY', 	'IMPROVEMENT_FISHING_BOATS',	NULL) ;
+		
+INSERT INTO TraitModifiers
+	(TraitType, 				ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_PACIFIC',		'QUO_BIOME_ASIAN_PACIFIC_FISH_BOMB') ,
+		('QUO_TRAIT_BIOME_ASIAN_PACIFIC',		'QUO_BIOME_ASIAN_PACIFIC_FISH_BOMB_2') ;
+ */
+
+		
+
+
+-- Free stuff in cities that have a acquire ocean tiles prior to X era
+/* INSERT INTO Requirements
+	(RequirementId, 		RequirementType, 	Likeliness,	Inverse, 	Triggered)
+VALUES	('QUO_REQ_BIOME_ASIAN_PACIFIC_CITY_HAS_OCEAN', 	'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE',	0,0,0)   ;
+
+INSERT INTO RequirementArguments 
+	(RequirementId,			Name, 			Type, 			Value, 				Extra, 	SecondExtra)
+VALUES 	('QUO_REQ_BIOME_ASIAN_PACIFIC_CITY_HAS_OCEAN',	'Amount',	'ARGTYPE_IDENTITY',	'6',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_ASIAN_PACIFIC_CITY_HAS_OCEAN',	'Hills',		'ARGTYPE_IDENTITY',		'0',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_ASIAN_PACIFIC_CITY_HAS_OCEAN',	'TerrainType',		'ARGTYPE_IDENTITY',		'TERRAIN_COAST',	NULL,	NULL 	)  ;
+		
+
+INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_ASIAN_PACIFIC_CITY_HAS_OCEAN_AND_ERA', 	'REQUIREMENTSET_TEST_ALL')  ;
+
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	('QUO_REQSET_BIOME_ASIAN_PACIFIC_CITY_HAS_OCEAN_AND_ERA', 	'QUO_REQ_BIOME_ASIAN_PACIFIC_CITY_HAS_OCEAN')  ,
+		--('QUO_REQSET_BIOME_ASIAN_PACIFIC_CITY_HAS_OCEAN_AND_ERA', 	'QUO_REQ_GLOBAL_ERA_NOT_YET_INDUSTRIAL') ,
+		('QUO_REQSET_BIOME_ASIAN_PACIFIC_CITY_HAS_OCEAN_AND_ERA', 	'QUO_REQ_GLOBAL_ERA_IS_ATLEAST_CLASSICAL') ;
+
+INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD', 'MODIFIER_PLAYER_GRANT_YIELD', 1, 1, NULL, NULL) ,
+		('QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD_PLAYER', 'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER', 0, 0, NULL, 	'QUO_REQSET_BIOME_ASIAN_PACIFIC_CITY_HAS_OCEAN_AND_ERA')  ;
+
+
+INSERT INTO ModifierArguments
+	(ModifierId, 			Name, 		Type, 			Value, 					Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD', 	'Amount', 'ScaleByGameSpeed', 	'200',	NULL, 	NULL) ,  
+	('QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD', 	'YieldType', 	'ARGTYPE_IDENTITY', 	'YIELD_GOLD',		NULL, 	NULL) ,
+	('QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD_PLAYER', 		'ModifierId', 		'ARGTYPE_IDENTITY', 	'QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD',	NULL, 	NULL) ;
+	
+	
+INSERT INTO TraitModifiers
+	(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_PACIFIC',	'QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD_PLAYER' );
+ */
+
+
+-- Gold from Volcanoes
+/* INSERT INTO Requirements
+	(RequirementId, 		RequirementType, 	Likeliness,	Inverse, 	Triggered)
+VALUES	('QUO_REQ_BIOME_ASIAN_PACIFIC_CITY_HAS_VOLCANO', 	'REQUIREMENT_CITY_HAS_X_FEATURE_TYPE',	0,0,0)   ;
+
+INSERT INTO RequirementArguments 
+	(RequirementId,			Name, 			Type, 			Value, 				Extra, 	SecondExtra)
+VALUES 	('QUO_REQ_BIOME_ASIAN_PACIFIC_CITY_HAS_VOLCANO',	'Amount',	'ARGTYPE_IDENTITY',	'1',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_ASIAN_PACIFIC_CITY_HAS_VOLCANO',	'FeatureType',		'ARGTYPE_IDENTITY',		'FEATURE_VOLCANO',	NULL,	NULL 	)  ;
+		
+
+INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_ASIAN_PACIFIC_CITY_HAS_VOLCANO_AND_ERA', 	'REQUIREMENTSET_TEST_ALL')  ;
+
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	('QUO_REQSET_BIOME_ASIAN_PACIFIC_CITY_HAS_VOLCANO_AND_ERA', 	'QUO_REQ_BIOME_ASIAN_PACIFIC_CITY_HAS_VOLCANO')  ,
+		--('QUO_REQSET_BIOME_ASIAN_PACIFIC_CITY_HAS_VOLCANO_AND_ERA', 	'QUO_REQ_GLOBAL_ERA_NOT_YET_INDUSTRIAL') ,
+		('QUO_REQSET_BIOME_ASIAN_PACIFIC_CITY_HAS_VOLCANO_AND_ERA', 	'QUO_REQ_GLOBAL_ERA_IS_ATLEAST_CLASSICAL') ;
+
+INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD_VOLCANO', 'MODIFIER_PLAYER_GRANT_YIELD', 1, 1, NULL, NULL) ,
+		('QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD_VOLCANO_PLAYER', 'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER', 0, 0, NULL, 	'QUO_REQSET_BIOME_ASIAN_PACIFIC_CITY_HAS_VOLCANO_AND_ERA')  ;
+
+
+INSERT INTO ModifierArguments
+	(ModifierId, 			Name, 		Type, 			Value, 					Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD_VOLCANO', 	'Amount', 'ScaleByGameSpeed', 	'200',	NULL, 	NULL) ,  
+	('QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD_VOLCANO', 	'YieldType', 	'ARGTYPE_IDENTITY', 	'YIELD_GOLD',		NULL, 	NULL) ,
+	('QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD_VOLCANO_PLAYER', 		'ModifierId', 		'ARGTYPE_IDENTITY', 	'QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD_VOLCANO',	NULL, 	NULL) ;
+	
+	
+INSERT INTO TraitModifiers
+	(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_PACIFIC',	'QUO_BIOME_ASIAN_PACIFIC_FREE_GOLD_VOLCANO_PLAYER' ); */
+
+
+
+-- high adj harbor
+/* INSERT INTO Requirements
+	(RequirementId, 		RequirementType, 	Likeliness,	Inverse, 	Triggered)
+VALUES	('QUO_REQ_BIOME_ASIAN_PAFICIC_HARBOR_HIGH_ADJ', 		'REQUIREMENT_CITY_HAS_HIGH_ADJACENCY_DISTRICT',	0,0,0) ;
+		
+
+INSERT INTO RequirementArguments 
+	(RequirementId,			Name, 			Type, 			Value, 				Extra, 	SecondExtra)
+VALUES 	('QUO_REQ_BIOME_ASIAN_PAFICIC_HARBOR_HIGH_ADJ',	'DistrictType',		'ARGTYPE_IDENTITY',	'DISTRICT_HARBOR',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_ASIAN_PAFICIC_HARBOR_HIGH_ADJ',	'YieldType',		'ARGTYPE_IDENTITY',	'YIELD_GOLD',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_ASIAN_PAFICIC_HARBOR_HIGH_ADJ',	'Amount',		'ARGTYPE_IDENTITY',	'4',	NULL,	NULL 	) ;
+
+	
+		
+INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_ASIAN_PAFICIC_HARBOR_HIGH_ADJ', 	'REQUIREMENTSET_TEST_ANY') ;
+
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	 ('QUO_REQSET_BIOME_ASIAN_PAFICIC_HARBOR_HIGH_ADJ', 	'QUO_REQ_BIOME_ASIAN_PAFICIC_HARBOR_HIGH_ADJ') ;
+
+
+		
+INSERT INTO Modifiers 
+		(ModifierId, 	ModifierType, 	RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_STRENGTH', 'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH', 0, 0, NULL, NULL) ,
+		('QUO_BIOME_ASIAN_PACIFIC_STRENGTH_CITY', 'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER', 0, 0, NULL, 	'QUO_REQSET_BIOME_ASIAN_PAFICIC_HARBOR_HIGH_ADJ') ,
+		('QUO_BIOME_ASIAN_PACIFIC_STRENGTH_PLAYER', 'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER', 0, 0, NULL, NULL) ;
+
+
+INSERT INTO ModifierArguments
+	(ModifierId, 			Name, 		Type, 			Value, 					Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_STRENGTH', 	'Amount', 	'ARGTYPE_IDENTITY', 	'2',		NULL, 	NULL) ,
+		('QUO_BIOME_ASIAN_PACIFIC_STRENGTH_CITY', 		'ModifierId', 		'ARGTYPE_IDENTITY', 	'QUO_BIOME_ASIAN_PACIFIC_STRENGTH_PLAYER',	NULL, 	NULL) ,
+		('QUO_BIOME_ASIAN_PACIFIC_STRENGTH_PLAYER', 		'ModifierId', 		'ARGTYPE_IDENTITY', 	'QUO_BIOME_ASIAN_PACIFIC_STRENGTH',	NULL, 	NULL)  ;
+
+
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_PACIFIC',	'QUO_BIOME_ASIAN_PACIFIC_STRENGTH_PLAYER') ;		
+ */
+
+ 
+ 
+ 
+ -- Earn no influence points
+/* INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_STEPPE_NO_INFLUENCE', 'MODIFIER_PLAYER_DISABLE_INFLUENCE', 0, 0, NULL, NULL)   ;
+ 
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ASIAN_STEPPE_NO_INFLUENCE', 	'Disable', 	'ARGTYPE_IDENTITY', 	'1',			NULL, 	NULL)  ;
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_STEPPE',	'QUO_BIOME_ASIAN_STEPPE_NO_INFLUENCE') ;
+ */	
+
+ 
+ 
+ 
+ 
+ 
+ -- No population cost for creating a Settler	
+/* INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_AFRICA_NO_COST_POP', 'MODIFIER_CITY_ADJUST_SETTLER_CONSUME_POPULATION', 0, 0, NULL, NULL)   ,
+		('QUO_BIOME_AFRICA_NO_COST_POP_PLAYER', 'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER', 0, 0, NULL, NULL)   ;
+ 
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_AFRICA_NO_COST_POP', 	'Enabled', 	'ARGTYPE_IDENTITY', 	'0',			NULL, 	NULL) ,
+		('QUO_BIOME_AFRICA_NO_COST_POP_PLAYER', 	'ModifierId', 	'ARGTYPE_IDENTITY', 	'QUO_BIOME_AFRICA_NO_COST_POP',			NULL, 	NULL) ;
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_AFRICA',	'QUO_BIOME_AFRICA_NO_COST_POP_PLAYER')  ;
+ */
+ 
+ 
+ 
+-- Trees provide Food rather than Production
+-- removed in v6.0.20
+/* INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_AFRICA_TREES', 	'REQUIREMENTSET_TEST_ANY') ;
+
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	 ('QUO_REQSET_BIOME_AFRICA_TREES', 	'PLOT_IS_FOREST_REQUIREMENT') ,
+		('QUO_REQSET_BIOME_AFRICA_TREES', 	'PLOT_IS_JUNGLE_REQUIREMENT')  ;
+
+
+INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_AFRICA_TREES', 'MODIFIER_PLAYER_ADJUST_PLOT_YIELD', 0, 0, NULL, 'QUO_REQSET_BIOME_AFRICA_TREES')  ,
+		('QUO_BIOME_AFRICA_TREES_FOOD', 'MODIFIER_PLAYER_ADJUST_PLOT_YIELD', 0, 0, NULL, 'QUO_REQSET_BIOME_AFRICA_TREES')  ;
+ 
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_AFRICA_TREES', 	'YieldType', 	'ARGTYPE_IDENTITY', 	'YIELD_PRODUCTION',			NULL, 	NULL) ,
+		('QUO_BIOME_AFRICA_TREES', 	'Amount', 	'ARGTYPE_IDENTITY', 	'-1',			NULL, 	NULL)  ,
+		('QUO_BIOME_AFRICA_TREES_FOOD', 	'YieldType', 	'ARGTYPE_IDENTITY', 	'YIELD_FOOD',			NULL, 	NULL) ,
+		('QUO_BIOME_AFRICA_TREES_FOOD', 	'Amount', 	'ARGTYPE_IDENTITY', 	'1',			NULL, 	NULL)  ;
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_AFRICA',	'QUO_BIOME_AFRICA_TREES')  ,
+		('QUO_TRAIT_BIOME_AFRICA',	'QUO_BIOME_AFRICA_TREES_FOOD')  ; */
+ 
+
+ 
+-- Bonus Food based on special conditions. Note some of these conditions are set up in the database but not currently used
+/* INSERT INTO Requirements
+	(RequirementId, 		RequirementType, 	Likeliness,	Inverse, 	Triggered)
+VALUES	('QUO_REQ_BIOME_AFRICA_ADJ_JUNGLE', 		'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES',	0,0,0)  ,
+		('QUO_REQ_BIOME_AFRICA_ADJ_FOREST', 		'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES',	0,0,0)  ,
+		('QUO_REQ_BIOME_AFRICA_TILE_HAS_FARM', 		'REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES',	0,0,0)  ,
+		('QUO_REQ_BIOME_AFRICA_CITY_NUM_DISTRICTS', 		'REQUIREMENT_CITY_HAS_X_SPECIALTY_DISTRICTS',	0,0,0)  ,
+		('QUO_REQ_BIOME_AFRICA_CITY_HAS_GOV_TALL', 		'REQUIREMENT_CITY_HAS_BUILDING',	0,0,0)  ,
+		('QUO_REQ_BIOME_AFRICA_CITY_HAS_GOV_WIDE', 		'REQUIREMENT_CITY_HAS_BUILDING',	0,0,0)  ,
+		('QUO_REQ_BIOME_AFRICA_CITY_HAS_GOV_CONQUEST', 		'REQUIREMENT_CITY_HAS_BUILDING',	0,0,0)  ;
+		
+
+INSERT INTO RequirementArguments 
+	(RequirementId,			Name, 			Type, 			Value, 				Extra, 	SecondExtra)
+VALUES 	('QUO_REQ_BIOME_AFRICA_ADJ_JUNGLE',	'FeatureType',		'ARGTYPE_IDENTITY',	'FEATURE_JUNGLE',	NULL,	NULL 	)  ,
+		('QUO_REQ_BIOME_AFRICA_ADJ_FOREST',	'FeatureType',		'ARGTYPE_IDENTITY',	'FEATURE_FOREST',	NULL,	NULL 	)  ,
+		('QUO_REQ_BIOME_AFRICA_TILE_HAS_FARM',	'FeatureType',		'ARGTYPE_IDENTITY',	'IMPROVEMENT_FARM',	NULL,	NULL 	)  ,
+		('QUO_REQ_BIOME_AFRICA_CITY_NUM_DISTRICTS',	'Amount',		'ARGTYPE_IDENTITY',	'4',	NULL,	NULL 	)  ,
+		('QUO_REQ_BIOME_AFRICA_CITY_HAS_GOV_TALL',	'BuildingType',		'ARGTYPE_IDENTITY',	'BUILDING_GOV_TALL',	NULL,	NULL 	)  ,
+		('QUO_REQ_BIOME_AFRICA_CITY_HAS_GOV_WIDE',	'BuildingType',		'ARGTYPE_IDENTITY',	'BUILDING_GOV_WIDE',	NULL,	NULL 	)  ,
+		('QUO_REQ_BIOME_AFRICA_CITY_HAS_GOV_CONQUEST',	'BuildingType',		'ARGTYPE_IDENTITY',	'BUILDING_GOV_CONQUEST',	NULL,	NULL 	)  ;
+		
+INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_AFRICA_ADJ_JUNGLE', 	'REQUIREMENTSET_TEST_ALL') ,
+		('QUO_REQSET_BIOME_AFRICA_ADJ_FOREST', 	'REQUIREMENTSET_TEST_ALL') ,
+		('QUO_REQSET_BIOME_AFRICA_CITY_TALL', 	'REQUIREMENTSET_TEST_ALL') ,
+		('QUO_REQSET_BIOME_AFRICA_CITY_WIDE', 	'REQUIREMENTSET_TEST_ALL') ,
+		('QUO_REQSET_BIOME_AFRICA_CITY_CONQUEST', 	'REQUIREMENTSET_TEST_ALL') ,
+		('QUO_REQSET_BIOME_AFRICA_CITY_GOVT_T1', 	'REQUIREMENTSET_TEST_ANY') ;
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	 ('QUO_REQSET_BIOME_AFRICA_ADJ_JUNGLE', 'QUO_REQ_BIOME_AFRICA_ADJ_JUNGLE') ,
+		--('QUO_REQSET_BIOME_AFRICA_ADJ_JUNGLE', 'QUO_REQ_GLOBAL_ERA_IS_ATLEAST_CLASSICAL') ,
+		--('QUO_REQSET_BIOME_AFRICA_ADJ_JUNGLE', 'QUO_REQ_BIOME_AFRICA_TILE_HAS_FARM') ,
+
+		('QUO_REQSET_BIOME_AFRICA_ADJ_FOREST', 	'QUO_REQ_BIOME_AFRICA_ADJ_FOREST') ,
+		--('QUO_REQSET_BIOME_AFRICA_ADJ_FOREST', 	'QUO_REQ_GLOBAL_ERA_IS_ATLEAST_CLASSICAL') ,
+		--('QUO_REQSET_BIOME_AFRICA_ADJ_FOREST', 'QUO_REQ_BIOME_AFRICA_TILE_HAS_FARM') ,
+		
+		('QUO_REQSET_BIOME_AFRICA_CITY_GOVT_T1', 'QUO_REQ_BIOME_AFRICA_CITY_HAS_GOV_TALL') ,
+		('QUO_REQSET_BIOME_AFRICA_CITY_GOVT_T1', 'QUO_REQ_BIOME_AFRICA_CITY_HAS_GOV_WIDE') ,
+		('QUO_REQSET_BIOME_AFRICA_CITY_GOVT_T1', 'QUO_REQ_BIOME_AFRICA_CITY_HAS_GOV_CONQUEST') ;
+
+		
+-- TALL
+INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_AFRICA_APPEAL_JUNGLE', 'MODIFIER_PLAYER_CITIES_ADJUST_FEATURE_APPEAL_MODIFIER', 0, 0, NULL, NULL)   ,
+		('QUO_BIOME_AFRICA_APPEAL_FOREST', 'MODIFIER_PLAYER_CITIES_ADJUST_FEATURE_APPEAL_MODIFIER', 0, 0, NULL, NULL)   ;
+
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_AFRICA_APPEAL_JUNGLE', 	'FeatureType', 	'ARGTYPE_IDENTITY', 	'FEATURE_JUNGLE',			NULL, 	NULL) ,
+		('QUO_BIOME_AFRICA_APPEAL_JUNGLE', 	'Amount', 	'ARGTYPE_IDENTITY', 	'2',			NULL, 	NULL) ,
+
+		('QUO_BIOME_AFRICA_APPEAL_FOREST', 	'FeatureType', 	'ARGTYPE_IDENTITY', 	'FEATURE_FOREST',			NULL, 	NULL) ,
+		('QUO_BIOME_AFRICA_APPEAL_FOREST', 	'Amount', 	'ARGTYPE_IDENTITY', 	'2',			NULL, 	NULL) ;
+
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_AFRICA',	'QUO_BIOME_AFRICA_APPEAL_JUNGLE')  ,
+		('QUO_TRAIT_BIOME_AFRICA',	'QUO_BIOME_AFRICA_APPEAL_FOREST')  ;		
+		
+		
+		
+INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_AFRICA_ADJ_JUNGLE', 'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD', 0, 0, NULL, 'QUO_REQSET_BIOME_AFRICA_ADJ_JUNGLE')   ,
+		('QUO_BIOME_AFRICA_ADJ_FOREST', 'MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD', 0, 0, NULL, 'QUO_REQSET_BIOME_AFRICA_ADJ_FOREST')   ,
+		('QUO_BIOME_AFRICA_ADJ_JUNGLE_PLAYER', 'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER', 0, 0, NULL, 'QUO_REQSET_BIOME_AFRICA_CITY_GOVT_T1')   ,
+		('QUO_BIOME_AFRICA_ADJ_FOREST_PLAYER', 'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER', 0, 0, NULL, 'QUO_REQSET_BIOME_AFRICA_CITY_GOVT_T1')  ;
+ 
+ 
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_AFRICA_ADJ_JUNGLE', 	'YieldType', 	'ARGTYPE_IDENTITY', 	'YIELD_FOOD',			NULL, 	NULL) ,
+		('QUO_BIOME_AFRICA_ADJ_JUNGLE', 	'Amount', 	'ARGTYPE_IDENTITY', 	'2',			NULL, 	NULL) ,
+		
+		('QUO_BIOME_AFRICA_ADJ_FOREST', 	'YieldType', 	'ARGTYPE_IDENTITY', 	'YIELD_FOOD',			NULL, 	NULL) ,
+		('QUO_BIOME_AFRICA_ADJ_FOREST', 	'Amount', 	'ARGTYPE_IDENTITY', 	'2',			NULL, 	NULL) ,
+		
+		('QUO_BIOME_AFRICA_ADJ_JUNGLE_PLAYER', 	'ModifierId', 	'ARGTYPE_IDENTITY', 	'QUO_BIOME_AFRICA_ADJ_JUNGLE',			NULL, 	NULL) ,
+		('QUO_BIOME_AFRICA_ADJ_FOREST_PLAYER', 	'ModifierId', 	'ARGTYPE_IDENTITY', 	'QUO_BIOME_AFRICA_ADJ_FOREST',			NULL, 	NULL) ;
+		
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_AFRICA',	'QUO_BIOME_AFRICA_ADJ_JUNGLE_PLAYER')  ,
+		('QUO_TRAIT_BIOME_AFRICA',	'QUO_BIOME_AFRICA_ADJ_FOREST_PLAYER')   */;
+ 
+
+ 
+ 
+ /* INSERT INTO Modifiers 
+	(ModifierId, 	ModifierType, 	RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES 	('QUO_BIOME_AFRICA_BUILD_ON_FEATURE_', 'MODIFIER_PLAYER_CITIES_ADJUST_VALID_FEATURES_DISTRICTS', 0, 0, NULL, NULL) ;
+
+INSERT INTO ModifierArguments
+	(ModifierId, 			Name, 		Type, 			Value, 					Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_AFRICA_BUILD_ON_FEATURE_', 	'DistrictType', 		'ARGTYPE_IDENTITY', 	'DISTRICT_THEATER',				NULL, 	NULL) ,  
+		('QUO_BIOME_AFRICA_BUILD_ON_FEATURE_', 	'FeatureType', 		'ARGTYPE_IDENTITY', 	'FEATURE_VOLCANO',				NULL, 	NULL) ; 
+
+INSERT INTO TraitModifiers
+		(TraitType, 		ModifierId)
+VALUES ('QUO_TRAIT_BIOME_AFRICA',	'QUO_BIOME_AFRICA_BUILD_ON_FEATURE_'); */
+
+
+
+-- Bonuses when adjacent to certain features
+-- removed in v7.0.12
+
+/* INSERT INTO Requirements
+	(RequirementId, 		RequirementType, 	Likeliness,	Inverse, 	Triggered)
+VALUES	('QUO_REQ_BIOME_BOREAL_EUROPE_ADJ_ICE', 		'REQUIREMENT_PLOT_ADJACENT_FEATURE_TYPE_MATCHES',	0,0,0)  ;
+
+
+INSERT INTO RequirementArguments 
+	(RequirementId,			Name, 			Type, 			Value, 				Extra, 	SecondExtra)
+VALUES 	('QUO_REQ_BIOME_BOREAL_EUROPE_ADJ_ICE',	'FeatureType',		'ARGTYPE_IDENTITY',	'FEATURE_ICE',	NULL,	NULL 	)  ;
+
+		
+INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_BOREAL_EUROPE_ADJACENCIES', 	'REQUIREMENTSET_TEST_ANY') ;
+
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	 ('QUO_REQSET_BIOME_BOREAL_EUROPE_ADJACENCIES', 	'QUO_REQ_BIOME_BOREAL_EUROPE_ADJ_ICE') ;
+
+
+INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_ADJ', 'MODIFIER_PLAYER_ADJUST_PLOT_YIELD', 0, 0, NULL, 'QUO_REQSET_BIOME_BOREAL_EUROPE_ADJACENCIES')   ;
+ 
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_ADJ', 	'YieldType', 	'ARGTYPE_IDENTITY', 	'YIELD_CULTURE',			NULL, 	NULL) ,
+		('QUO_BIOME_BOREAL_EUROPE_ADJ', 	'Amount', 	'ARGTYPE_IDENTITY', 	'2',			NULL, 	NULL) ,
+		('QUO_BIOME_BOREAL_EUROPE_ADJ',	'MaxDistance',	'ARGTYPE_IDENTITY',	'2',	NULL,	NULL 	) ,
+		('QUO_BIOME_BOREAL_EUROPE_ADJ',	'MinDistance',	'ARGTYPE_IDENTITY',	'1',	NULL,	NULL 	) ;
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_BOREAL_EUROPE',	'QUO_BIOME_BOREAL_EUROPE_ADJ')  ; */
+
+
+
+/* INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_NO_URANIUM', 'MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_ACCUMULATION_SPECIFIC_RESOURCE', 0, 0, NULL, NULL)   ;
+ 
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_NO_URANIUM', 	'ResourceType', 	'ARGTYPE_IDENTITY', 	'RESOURCE_URANIUM',			NULL, 	NULL) ,
+		('QUO_BIOME_BOREAL_EUROPE_NO_URANIUM', 	'Amount', 	'ARGTYPE_IDENTITY', 	'-99',			NULL, 	NULL)  ;
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_BOREAL_EUROPE',	'QUO_BIOME_BOREAL_EUROPE_NO_URANIUM')  ; 
+ */ 
+
+ 
+ -- make snow and tundra mountains workable
+/* INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_WORKABLE_TUNDRA', 'MODIFIER_PLAYER_ADJUST_TERRAIN_WORKABLE', 0, 0, NULL, NULL)   ,
+		('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_WORKABLE_SNOW', 'MODIFIER_PLAYER_ADJUST_TERRAIN_WORKABLE', 0, 0, NULL, NULL)   ;
+ 
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_WORKABLE_TUNDRA', 	'Ignore', 	'ARGTYPE_IDENTITY', 	'1',			NULL, 	NULL) ,
+		('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_WORKABLE_TUNDRA', 	'TerrainType', 	'ARGTYPE_IDENTITY', 	'TERRAIN_TUNDRA_MOUNTAIN',			NULL, 	NULL) ,
+		('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_WORKABLE_SNOW', 	'Ignore', 	'ARGTYPE_IDENTITY', 	'1',			NULL, 	NULL) ,
+		('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_WORKABLE_SNOW', 	'TerrainType', 	'ARGTYPE_IDENTITY', 	'TERRAIN_SNOW_MOUNTAIN',			NULL, 	NULL) ;
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_BOREAL_EUROPE',	'QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_WORKABLE_TUNDRA')  ,
+		('QUO_TRAIT_BIOME_BOREAL_EUROPE',	'QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_WORKABLE_SNOW')  ;
+
+
+
+INSERT INTO Modifiers 
+		(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_CULTURE', 'MODIFIER_PLAYER_ADJUST_PLOT_YIELD', 0, 0, NULL, 'REQUIREMENTS_PLOT_IS_MOUNTAIN')   ,
+		('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_FAITH', 'MODIFIER_PLAYER_ADJUST_PLOT_YIELD', 0, 0, NULL, 'REQUIREMENTS_PLOT_IS_MOUNTAIN')   ;
+ 
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_CULTURE', 	'Amount', 	'ARGTYPE_IDENTITY', 	'2',			NULL, 	NULL) ,
+		('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_CULTURE', 	'YieldType', 	'ARGTYPE_IDENTITY', 	'YIELD_CULTURE',			NULL, 	NULL) ,
+		('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_FAITH', 	'Amount', 	'ARGTYPE_IDENTITY', 	'2',			NULL, 	NULL) ,
+		('QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_FAITH', 	'YieldType', 	'ARGTYPE_IDENTITY', 	'YIELD_FAITH',			NULL, 	NULL) ;
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_BOREAL_EUROPE',	'QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_CULTURE')  ,
+		('QUO_TRAIT_BIOME_BOREAL_EUROPE',	'QUO_BIOME_BOREAL_EUROPE_MOUNTAIN_FAITH')  ;
+		
+ */		
+
+ 
+ 
+ -- No great generals
+/* INSERT INTO ExcludedGreatPersonClasses
+	(GreatPersonClassType, TraitType)
+VALUES('GREAT_PERSON_CLASS_MERCHANT', 'QUO_TRAIT_BIOME_BOREAL_EUROPE') ;
+ */
+		
+-- Attempt to lower production speed of WMDs -- doesnt work because these are Projects and we cant set a negative number
+-- Attempt to lower resource imports -- ALSO does not work, because you cant set a negative number
+/* 
+INSERT INTO Modifiers 
+		(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_LESS_URANIUM', 'MODIFIER_PLAYER_ADJUST_FREE_RESOURCE_IMPORT_EXTRACTION', 0, 0, NULL, NULL)     ;
+ 
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_LESS_URANIUM', 	'Amount', 	'ARGTYPE_IDENTITY', 	'-10',			NULL, 	NULL) ,
+		('QUO_BIOME_BOREAL_EUROPE_LESS_URANIUM', 	'ResourceType', 	'ARGTYPE_IDENTITY', 	'RESOURCE_URANIUM',			NULL, 	NULL);
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_BOREAL_EUROPE',	'QUO_BIOME_BOREAL_EUROPE_LESS_URANIUM')  ;
+ */		
+
+ 
+ 
+ --Charge bonus for mil engineers
+/* INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_CHARGE_BONUS', 'MODIFIER_PLAYER_TRAINED_UNITS_ADJUST_BUILDER_CHARGES', 0, 0, NULL, 'QUO_REQSET_BIOME_BOREAL_EUROPE_CHARGES')  ;
+
+
+INSERT INTO ModifierArguments
+	(ModifierId, 			Name, 		Type, 			Value, 					Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_CHARGE_BONUS', 	'Amount', 'ARGTYPE_IDENTITY', 	'5',	NULL, 	NULL) ;
+	
+	
+INSERT INTO TraitModifiers
+	(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_BOREAL_EUROPE',	'QUO_BIOME_BOREAL_EUROPE_CHARGE_BONUS' );
+ */
+		
+		
+
+-- Has desert, wants Tundra
+-- Removed in v8.0.0
+
+/* INSERT INTO Requirements
+	(RequirementId, 		RequirementType, 	Likeliness,	Inverse, 	Triggered)
+VALUES	('QUO_REQ_BIOME_BOREAL_EUROPE_CITY_HAS_DESERT', 	'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE',	0,0,0)  ,
+		('QUO_REQ_BIOME_BOREAL_EUROPE_CITY_WANTS_TUNDRA', 	'REQUIREMENT_CITY_HAS_X_TERRAIN_TYPE',	0,1,0)  ;
+
+INSERT INTO RequirementArguments 
+	(RequirementId,			Name, 			Type, 			Value, 				Extra, 	SecondExtra)
+VALUES 	('QUO_REQ_BIOME_BOREAL_EUROPE_CITY_HAS_DESERT',	'Amount',	'ARGTYPE_IDENTITY',	'2',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_BOREAL_EUROPE_CITY_HAS_DESERT',	'Hills',		'ARGTYPE_IDENTITY',		'1',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_BOREAL_EUROPE_CITY_HAS_DESERT',	'TerrainType',		'ARGTYPE_IDENTITY',		'TERRAIN_DESERT',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_BOREAL_EUROPE_CITY_WANTS_TUNDRA',	'Amount',	'ARGTYPE_IDENTITY',	'2',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_BOREAL_EUROPE_CITY_WANTS_TUNDRA',	'Hills',		'ARGTYPE_IDENTITY',		'1',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_BOREAL_EUROPE_CITY_WANTS_TUNDRA',	'TerrainType',		'ARGTYPE_IDENTITY',		'TERRAIN_TUNDRA',	NULL,	NULL 	) ;
+
+INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_BOREAL_EUROPE_CITY_HAS_DESERT', 	'REQUIREMENTSET_TEST_ANY') ,
+		('QUO_REQSET_BIOME_BOREAL_EUROPE_CITY_WANTS_TUNDRA', 	'REQUIREMENTSET_TEST_ANY') ;
+
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	('QUO_REQSET_BIOME_BOREAL_EUROPE_CITY_HAS_DESERT', 	'QUO_REQ_BIOME_BOREAL_EUROPE_CITY_HAS_DESERT') ,
+		('QUO_REQSET_BIOME_BOREAL_EUROPE_CITY_WANTS_TUNDRA', 	'QUO_REQ_BIOME_BOREAL_EUROPE_CITY_WANTS_TUNDRA') ;
+
+
+INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_HATE_DESERT', 'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY', 0, 0, NULL, 'QUO_REQSET_BIOME_BOREAL_EUROPE_CITY_HAS_DESERT')   ,
+		('QUO_BIOME_BOREAL_EUROPE_WANT_TUNDRA', 'MODIFIER_PLAYER_CITIES_ADJUST_POLICY_AMENITY', 0, 0, NULL, 'QUO_REQSET_BIOME_BOREAL_EUROPE_CITY_WANTS_TUNDRA')   ;
+
+
+ INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_BOREAL_EUROPE_HATE_DESERT', 	'Amount', 	'ARGTYPE_IDENTITY', 	'-1',			NULL, 	NULL) ,
+		('QUO_BIOME_BOREAL_EUROPE_WANT_TUNDRA', 	'Amount', 	'ARGTYPE_IDENTITY', 	'2',			NULL, 	NULL) ;
+
+
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_BOREAL_EUROPE',	'QUO_BIOME_BOREAL_EUROPE_HATE_DESERT')  ,
+		('QUO_TRAIT_BIOME_BOREAL_EUROPE',	'QUO_BIOME_BOREAL_EUROPE_WANT_TUNDRA')  ; */
+ 
+
+ 
+ -- Cities much more vulnerable to culture flipping
+/*INSERT INTO Requirements
+	(RequirementId, 		RequirementType, 	Likeliness,	Inverse, 	Triggered)
+VALUES	('QUO_REQ_BIOME_ROMANESQUE_NOT_DARK_AGE', 		'REQUIREMENT_PLAYER_HAS_DARK_AGE',	0,1,0) ;
+
+-- no arguments
+
+INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQ_BIOME_ROMANESQUE_NOT_DARK_AGE', 	'REQUIREMENTSET_TEST_ALL')  ;
+
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	 ('QUO_REQ_BIOME_ROMANESQUE_NOT_DARK_AGE', 	'QUO_REQ_BIOME_ROMANESQUE_NOT_DARK_AGE')  ;
+
+INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ROMANESQUE_IDENTITY_DEBUFF', 'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_CITIZEN', 0, 0, NULL, 'QUO_REQ_BIOME_ROMANESQUE_NOT_DARK_AGE')   ;
+ 
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ROMANESQUE_IDENTITY_DEBUFF', 	'Amount', 	'ARGTYPE_IDENTITY', 	'-0.50',			NULL, 	NULL) ;
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ROMANESQUE',	'QUO_BIOME_ROMANESQUE_IDENTITY_DEBUFF')  ;
+ */
+
+
+-- Governors reduce rather than add Loyalty
+-- To make sure we can use the Established paramater we need to be looking for Governors first promotions rater
+-- than just their presence, so we scan the database first for all promos with no prereqs
+/* CREATE TABLE tblBIOME_ROMANESQUE_GovPromotionsNoPreReq as
+select governorpromotiontype as xPromo from governorpromotions
+where governorpromotiontype not in (select governorpromotionprereqs.GovernorPromotionType from governorpromotionprereqs);
+ 
+
+INSERT INTO Requirements
+	(RequirementId, 		RequirementType, 	Likeliness,	Inverse, 	Triggered)
+SELECT 'QUO_REQ_BIOME_ROMANESQUE_GOV_HAS_PROMO_' || xPromo, 		'REQUIREMENT_CITY_HAS_SPECIFIC_GOVERNOR_PROMOTION_TYPE',	0,0,0 
+FROM tblBIOME_ROMANESQUE_GovPromotionsNoPreReq;
+
+INSERT INTO RequirementArguments 
+	(RequirementId,			Name, 			Type, 			Value, 				Extra, 	SecondExtra)
+SELECT 'QUO_REQ_BIOME_ROMANESQUE_GOV_HAS_PROMO_' || xPromo,	'Established',		'ARGTYPE_IDENTITY',	'0',	NULL,	NULL 	
+FROM tblBIOME_ROMANESQUE_GovPromotionsNoPreReq;
+
+INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_ROMANESQUE_GOV_PROMO_NO_PREREQ', 	'REQUIREMENTSET_TEST_ANY')  ;
+
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+SELECT 'QUO_REQSET_BIOME_ROMANESQUE_GOV_PROMO_NO_PREREQ', 	'QUO_REQ_BIOME_ROMANESQUE_GOV_HAS_PROMO_' || xPromo
+FROM tblBIOME_ROMANESQUE_GovPromotionsNoPreReq; */
+
+
+
+
+-- Points toward a Great Writer with each kill
+-- removed in v7.0.14
+/* INSERT INTO Requirements
+	(RequirementId, 		RequirementType, 	Likeliness,	Inverse, 	Triggered)
+VALUES	('QUO_REQ_BIOME_ROMANESQUE_TIME_CUTOFF', 		'REQUIREMENT_GAME_ERA_ATLEAST_EXPANSION',	0,1,0) ,
+		('QUO_REQ_BIOME_ROMANESQUE_DEBUFF_START', 		'REQUIREMENT_GAME_ERA_ATLEAST_EXPANSION',	0,0,0) ,
+		('QUO_REQ_BIOME_ROMANESQUE_DEBUFF_END', 		'REQUIREMENT_GAME_ERA_ATLEAST_EXPANSION',	0,1,0) ;
+
+
+INSERT INTO RequirementArguments 
+	(RequirementId,			Name, 			Type, 			Value, 				Extra, 	SecondExtra)
+VALUES 	('QUO_REQ_BIOME_ROMANESQUE_TIME_CUTOFF',	'EraType',		'ARGTYPE_IDENTITY',	'ERA_MEDIEVAL',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_ROMANESQUE_DEBUFF_START',	'EraType',		'ARGTYPE_IDENTITY',	'ERA_RENAISSANCE',	NULL,	NULL 	) ,
+		('QUO_REQ_BIOME_ROMANESQUE_DEBUFF_END',	'EraType',		'ARGTYPE_IDENTITY',	'ERA_INDUSTRIAL',	NULL,	NULL 	) ;
+		
+
+
+INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_ROMANESQUE_TIME_CUTOFF', 	'REQUIREMENTSET_TEST_ALL')  ,
+		('QUO_REQSET_BIOME_ROMANESQUE_REN_ERA', 	'REQUIREMENTSET_TEST_ALL')  ;
+
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	 ('QUO_REQSET_BIOME_ROMANESQUE_TIME_CUTOFF', 	'QUO_REQ_BIOME_ROMANESQUE_TIME_CUTOFF') ,
+		('QUO_REQSET_BIOME_ROMANESQUE_REN_ERA', 	'QUO_REQ_BIOME_ROMANESQUE_DEBUFF_START') ,
+		('QUO_REQSET_BIOME_ROMANESQUE_REN_ERA', 	'QUO_REQ_BIOME_ROMANESQUE_DEBUFF_END') ;
+		
+
+
+INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ROMANESQUE_UNIT_GPP_UNIT', 'MODIFIER_PLAYER_UNIT_ADJUST_GREAT_PEOPLE_POINTS_PER_KILL', 0, 0, NULL, NULL) ,
+		('QUO_BIOME_ROMANESQUE_UNIT_GPP_PLAYER', 'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER', 0, 0, NULL, 'QUO_REQSET_BIOME_ROMANESQUE_TIME_CUTOFF') ;
+
+		
+INSERT INTO ModifierArguments
+	(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ROMANESQUE_UNIT_GPP_UNIT', 	'Amount', 	'ARGTYPE_IDENTITY', 	'6',			NULL, 	NULL) ,
+		('QUO_BIOME_ROMANESQUE_UNIT_GPP_UNIT', 	'GreatPersonClassType', 	'ARGTYPE_IDENTITY', 	'GREAT_PERSON_CLASS_WRITER',			NULL, 	NULL) ,
+		('QUO_BIOME_ROMANESQUE_UNIT_GPP_PLAYER', 	'ModifierId', 	'ARGTYPE_IDENTITY', 	'QUO_BIOME_ROMANESQUE_UNIT_GPP_UNIT',			NULL, 	NULL) ;
+
+INSERT INTO TraitModifiers
+	(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ROMANESQUE',	'QUO_BIOME_ROMANESQUE_UNIT_GPP_PLAYER') ; 
+ */
+
+
+ 
+ 
+-- During the Renaissance, enemies lose identity per turn
+-- Updated for version 7.0.12, removed in 7.0.14 because it is so close to Eleanor's special
+
+/* INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ROMANESQUE_DEBUFF', 'MODIFIER_PLAYER_ADJUST_IDENTITY_PER_TURN_FROM_NEARBY_GREAT_WORKS', 0, 0, NULL, 'QUO_REQSET_BIOME_ROMANESQUE_REN_ERA') ;
+
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ROMANESQUE_DEBUFF', 	'Amount', 	'ARGTYPE_IDENTITY', 	'-2',			NULL, 	NULL) ,
+		('QUO_BIOME_ROMANESQUE_DEBUFF', 	'ForeignCities', 	'ARGTYPE_IDENTITY', 	'1',			NULL, 	NULL) ;
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ROMANESQUE',	'QUO_BIOME_ROMANESQUE_DEBUFF')  ;
+
+ */
+
+ 
+ 
+ -- Earn a free civic boost when rival earns a Great Artist
+-- REMOVED: Too powerful and conflicts with the Great Library 
+/* INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ROMANESQUE_REN_BURST', 'MODIFIER_PLAYER_GRANT_BOOST_WITH_GREAT_PERSON', 0, 0, NULL, 'QUO_REQSET_BIOME_ROMANESQUE_REN_ERA') ;
+
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ROMANESQUE_REN_BURST', 	'GreatPersonClass', 	'ARGTYPE_IDENTITY', 	'GREAT_PERSON_CLASS_ARTIST',			NULL, 	NULL)  ,
+		('QUO_BIOME_ROMANESQUE_REN_BURST', 	'OtherPlayers', 	'ARGTYPE_IDENTITY', 	'1',			NULL, 	NULL)  ,
+		('QUO_BIOME_ROMANESQUE_REN_BURST', 	'TechBoost', 	'ARGTYPE_IDENTITY', 	'0',			NULL, 	NULL)  ;
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ROMANESQUE',	'QUO_BIOME_ROMANESQUE_REN_BURST')  ;
+ */
+
+
+
+
+-- +5% Gold per Great Person ever earned
+/* INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ROMANESQUE_REN_GP_YIELD', 'MODIFIER_PLAYER_ADJUST_YIELD_MODIFIER_PER_EARNED_GREAT_PERSON', 0, 0, NULL, 'QUO_REQSET_BIOME_ROMANESQUE_REN_ERA') ;
+
+INSERT INTO ModifierArguments
+		(ModifierId, 			Name, 		Type, 			Value, 			Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ROMANESQUE_REN_GP_YIELD', 	'Amount', 	'ARGTYPE_IDENTITY', 	'5',			NULL, 	NULL)  ,
+		('QUO_BIOME_ROMANESQUE_REN_GP_YIELD', 	'YieldType', 	'ARGTYPE_IDENTITY', 	'YIELD_GOLD',			NULL, 	NULL)  ;
+		
+INSERT INTO TraitModifiers
+		(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ROMANESQUE',	'QUO_BIOME_ROMANESQUE_REN_GP_YIELD')  ;
+ */
+
+ 
+ 
+ 
+ /* INSERT INTO Requirements
+	(RequirementId, 		RequirementType, 	Likeliness,	Inverse, 	Triggered)
+VALUES	('QUO_REQ_BIOME_ASIAN_EXPANSE_RANGED', 	'REQUIREMENT_UNIT_PROMOTION_CLASS_MATCHES',	0,0,0)  ;
+
+INSERT INTO RequirementArguments 
+		(RequirementId,			Name, 			Type, 			Value, 		Extra, 	SecondExtra)
+VALUES 	('QUO_REQ_BIOME_ASIAN_EXPANSE_RANGED',	'UnitPromotionClass',		'ARGTYPE_IDENTITY',		'PROMOTION_CLASS_SIEGE',	NULL,	NULL 	)  ;
+
+INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_ASIAN_EXPANSE_RANGED', 	'REQUIREMENTSET_TEST_ANY') ;
+
+ INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	('QUO_REQSET_BIOME_ASIAN_EXPANSE_RANGED', 	'QUO_REQ_BIOME_ASIAN_EXPANSE_RANGED')  ;
+
+
+-- Lower range for Siege units
+ INSERT INTO Modifiers 
+	(ModifierId, 	ModifierType, 	RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_EXPANSE_RANGE', 	'MODIFIER_UNIT_ADJUST_ATTACK_RANGE', 0, 0, NULL, NULL) ,
+		('QUO_BIOME_ASIAN_EXPANSE_RANGE_PLAYER', 	'MODIFIER_PLAYER_UNITS_ATTACH_MODIFIER', 0, 0, NULL, 'QUO_REQSET_BIOME_ASIAN_EXPANSE_RANGED') ;
+
+INSERT INTO ModifierArguments
+	(ModifierId, 			Name, 		Type, 			Value, 					Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ASIAN_EXPANSE_RANGE', 	'Amount', 	'ARGTYPE_IDENTITY', 	'-1',					NULL, 	NULL) ,	
+		('QUO_BIOME_ASIAN_EXPANSE_RANGE_PLAYER', 	'ModifierId', 	'ARGTYPE_IDENTITY', 	'QUO_BIOME_ASIAN_EXPANSE_RANGE',		NULL, 	NULL)   ;
+
+INSERT INTO TraitModifiers
+	(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_EXPANSE',	'QUO_BIOME_ASIAN_EXPANSE_RANGE_PLAYER') ; */
+
+
+-- Increase XP for Siege units
+-- Removed in v7.0.6
+
+/* INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_EXPANSE_BONUS_XP', 'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER', 0, 0, NULL, 'QUO_REQSET_BIOME_ASIAN_EXPANSE_RANGED') ;
+
+
+INSERT INTO ModifierArguments
+	(ModifierId, 			Name, 			Type, 			Value, 				Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ASIAN_EXPANSE_BONUS_XP', 	'Amount', 		'ARGTYPE_IDENTITY', 	'50',				NULL, 	NULL)  ;
+
+INSERT INTO TraitModifiers
+	(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_EXPANSE',	'QUO_BIOME_ASIAN_EXPANSE_BONUS_XP'); */
+
+
+
+-- Food from Population
+/* INSERT INTO Modifiers 
+	(ModifierId, ModifierType, RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_EXPANSE_FOOD_FROM_POPULATION', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_PER_POPULATION', 0, 0, NULL, 'CITY_HAS_3_TITLE_GOVERNOR_REQUIREMENTS');
+
+
+INSERT INTO ModifierArguments
+	(ModifierId, 			Name, 			Type, 			Value, 				Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ASIAN_EXPANSE_FOOD_FROM_POPULATION', 	'Amount', 		'ARGTYPE_IDENTITY', 	'0.3',				NULL, 	NULL)  ;
+
+
+INSERT INTO TraitModifiers
+	(TraitType, 			ModifierID)
+VALUES	('QUO_TRAIT_BIOME_ASIAN_EXPANSE',	'QUO_BIOME_ASIAN_EXPANSE_FOOD_FROM_POPULATION');
+ */
+ 
+ 
+-- Can place Mines on some flat tiles
+/* INSERT INTO RequirementSets 
+	(RequirementSetId, 		RequirementSetType)
+VALUES 	('QUO_REQSET_BIOME_ASIAN_EXPANSE_MINES_CUTOFF', 	'REQUIREMENTSET_TEST_ALL') ;
+
+
+INSERT INTO RequirementSetRequirements
+	(RequirementSetId,	RequirementId)
+VALUES	('QUO_REQSET_BIOME_ASIAN_EXPANSE_MINES_CUTOFF', 	'QUO_REQ_GLOBAL_ERA_NOT_YET_RENAISSANCE') ;
+*/
+

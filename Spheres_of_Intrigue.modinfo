@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="e4c1915f-a5eb-4d1e-ac9d-e8fadf77bc56" version="8.0.13">
+	<Properties>
+		<Name>QUO_LOC_MOD_NAME</Name>
+		<Teaser>QUO_LOC_MOD_TEASER</Teaser>		
+		<Description>Mini expansion pack that updates game rules and introduces the concept of spheres--categories of civilizations with unique abilities. A MyOptions.sql file is included in the mod folder to disable or enable other features. For complete mod details, visit https://forums.civfanatics.com/resources/quos-combined-tweaks.25703/</Description>
+		<Authors>Quo</Authors>
+		<CompatibleVersions>2.0</CompatibleVersions>
+	</Properties>
+	<Dependencies>
+		<Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="LOC_EXPANSION2_MOD_TITLE"/>
+	</Dependencies>
+  	<LocalizedText>
+        	<Text id="QUO_LOC_MOD_NAME">
+            		<en_US>Quo's Spheres of Intrigue (CivFanatics Edition) v8.0.13</en_US>
+        	</Text>
+        	<Text id="QUO_LOC_MOD_TEASER">
+            		<en_US>Adds Sphere to the game,special abilities that are shared among civilizations from various regions of the world. Makes additional gameplay changes. Requires Rise and Fall and Gathering Storm expansion packs.</en_US>
+        	</Text>        
+    	</LocalizedText>  
+
+    <!-- Files included -->
+	<Files>
+		<File>QuoDependencies.dep</File>
+
+		<File>Scripts/Quo_GameLaunch.lua</File>
+		<File>Config/Quo_Config.sql</File>
+		<File>Config/Quo_Config.xml</File>
+		<File>Tutorial/TutorialScenarioBase.lua</File>
+
+		<File>Gameplay/Quo_AA_Setup_Code.sql</File>
+		<File>Gameplay/Quo_AA_GlobalObjects_Code.sql</File>
+
+		<File>XAV_IP/XAV_AA_Setup_Code.sql</File>
+
+		<File>MyOptions.sql</File>
+	
+		<File>Gameplay/Quo_Rules_Code.sql</File>
+		<File>Gameplay/Quo_Resources_Code.sql</File>
+		<File>Gameplay/Quo_Civ_Code.sql</File>
+		<File>Gameplay/Quo_Civ_XP2_Code.sql</File>
+		<File>Gameplay/Quo_Tantrum_Code.sql</File>
+		<File>Gameplay/Quo_Friends_Code.sql</File>
+		<File>Gameplay/Quo_Barb_Code.sql</File>
+		<File>Gameplay/Quo_Ocean_Code.sql</File>
+		<File>Gameplay/Quo_Oasis_Code.sql</File>
+		<File>Gameplay/Quo_Options_Code.sql</File>
+		<File>Gameplay/Quo_Siege_Code.sql</File>
+		<File>Gameplay/Quo_Patron_Code.sql</File>
+		<File>Gameplay/Quo_Governments_Code.sql</File>
+		<File>Gameplay/Quo_PopYield_Code.sql</File>
+		<!--<File>Gameplay/Quo_Policies_Code.sql</File>-->
+		<File>Gameplay/Quo_Wonder_Code.sql</File>
+		<File>Gameplay/Quo_New_Buildings_Code.sql</File>
+		<!--<File>Gameplay/Quo_Beliefs_Code.sql</File>-->
+		<!-- <File>Gameplay/Quo_Secrets_Code.sql</File>   removed in v7.0.0 -->
+		<File>Gameplay/Quo_Units_Code.sql</File>
+		<File>Gameplay/Quo_GreatPeople_Code.sql</File>
+		<File>Gameplay/Quo_REX_Code.sql</File>
+		<File>Gameplay/Quo_Hell_Code.sql</File>
+		<File>Gameplay/Quo_Biome_Code.sql</File>
+		<File>Gameplay/Quo_Enviro_Code.sql</File>
+		<File>Gameplay/Quo_Governors_Code.sql</File>
+		
+		<File>Gameplay/Quo_AI_Civ_Code.sql</File>
+
+
+		<File>MyScratchpad.sql</File>
+		<File>MyScratchpad_Text.sql</File>
+		<File>MyScratchpad_Config.sql</File>
+		
+		<!-- textures-->
+		<File>XLPs/Quo_Governor_Atlas.xlp</File>
+		
+		<File>Textures/BackGrounds/QUO_GOVERNOR_MARINER_NORMAL.dds</File>
+		<File>Textures/BackGrounds/QUO_GOVERNOR_MARINER_NORMAL.tex</File>
+		<File>Textures/BackGrounds/QUO_GOVERNOR_MARINER_SELECTED.dds</File>
+		<File>Textures/BackGrounds/QUO_GOVERNOR_MARINER_SELECTED.tex</File>
+
+		
+		<!-- English Text -->
+		<File>Text/Quo_Main_Text.sql</File>
+		<File>Text/Quo_Main_Text_New.xml</File>
+		<File>Text/Quo_Policy_Text.sql</File>
+		<File>Text/Quo_Civ_Text.sql</File>
+		<File>Text/Quo_Civ_Text_New.xml</File>
+		<File>Text/Quo_Civ_Text_Tutorial.xml</File>
+		<!-- <File>Text/Quo_RandomAgendas_Text.sql</File> -->
+		
+		<!-- Russian Text -->
+		<File>Text/ru_RU/Quo_Civ_Text_ru_RU.sql</File>
+			
+		
+		<File>Icons/Quo_Icons.xml</File>
+		
+		
+		<!-- XAV Improvements Patch Files -->
+		
+		<File>XAV_IP/XAV_DistrictBuilders_Code.sql</File>
+		<File>XAV_IP/XAV_SlowerTechRules_Code.sql</File>
+		<File>XAV_IP/XAV_Boosts_Code.sql</File>
+
+
+		<!-- cleanup -->
+		<File>Gameplay/Quo_ZY_Closeout_Code.sql</File>
+		<File>Gameplay/Quo_ZZ_Debug_Code.sql</File>
+		
+		
+	</Files>
+    <!-- Config prior to game starting -->
+	<FrontEndActions>
+		<!--Updates to Configuration database (DebugConfiguration.sqlite)-->
+		<UpdateDatabase id="QUO_CONFIG_DATABASE">
+			<File Priority="100">Config/Quo_Config.sql</File>
+			<File Priority="90">Config/Quo_Config.xml</File>
+			<File Priority="50">MyScratchpad_Config.sql</File>
+		</UpdateDatabase>
+    	<UpdateText id="QUO_CONFIG_TEXT">
+			<File Priority="100">Gameplay/Quo_AA_Setup_Code.sql</File>
+			<File Priority="90">MyOptions.sql</File>		
+	
+			<File Priority="70">>Text/Quo_Main_Text.sql</File>
+			<File Priority="60">Text/Quo_Policy_Text.sql</File>
+			<File Priority="65">Text/Quo_Civ_Text.sql</File>
+			<File Priority="50">Text/Quo_Civ_Text_New.xml</File>
+			<File Priority="45">Text/Quo_Main_Text_New.xml</File>
+			<File Priority="35">MyScratchpad_Text.sql</File>
+						
+			<File>Text/ru_RU/Quo_Civ_Text_ru_RU.sql</File>
+    	</UpdateText>
+	</FrontEndActions>
+
+    <!-- Main game -->
+	<Components>
+		<!--Art stuff -->
+		<ModArt id="Quo_Mod_Art">
+			<Items>
+				<File>QuoDependencies.dep</File>
+			</Items>
+		</ModArt>
+		<Icons>
+			<Items>
+				<File>Icons/Quo_Icons.xml</File>
+				<File>XAV_IP/Icons.xml</File>
+			</Items>
+		</Icons>
+		<!--Files for a basic game -->
+		<UpdateDatabase id="QUO_BASIC">
+           		<Properties>
+               		<RuleSet>RULESET_EXPANSION_2</RuleSet>
+					<LoadOrder>10100</LoadOrder>
+           		</Properties>
+			<Items>
+				<!-- Quo Tweaks Setup -->
+				<File Priority="400">Gameplay/Quo_AA_Setup_Code.sql</File>
+				<File Priority="300">Gameplay/Quo_AA_GlobalObjects_Code.sql</File>
+				
+				<!-- XAV Improvements Patch Setup -->
+				<File Priority="250">XAV_IP/XAV_AA_Setup_Code.sql</File>
+
+				<File Priority="200">MyOptions.sql</File>				
+
+ 				<File Priority="150">Gameplay/Quo_Rules_Code.sql</File>
+				<File Priority="145">Gameplay/Quo_Civ_Code.sql</File>
+				<File Priority="145">Gameplay/Quo_Civ_XP2_Code.sql</File>
+				<File Priority="140">Gameplay/Quo_Resources_Code.sql</File>
+				<File Priority="135">Gameplay/Quo_Options_Code.sql</File>
+
+				<File Priority="99">Gameplay/Quo_Tantrum_Code.sql</File>
+				<File Priority="98">Gameplay/Quo_Friends_Code.sql</File>
+				<File Priority="97">Gameplay/Quo_Barb_Code.sql</File>
+				<File Priority="96">Gameplay/Quo_Ocean_Code.sql</File>
+				<File Priority="95">Gameplay/Quo_Oasis_Code.sql</File>
+				<File Priority="94">Gameplay/Quo_Siege_Code.sql</File>
+				<!--<File Priority="93">Gameplay/Quo_Policies_Code.sql</File>-->
+				<File Priority="92">Gameplay/Quo_Governments_Code.sql</File>
+				<File Priority="91">Gameplay/Quo_Wonder_Code.sql</File>
+				<File Priority="90">Gameplay/Quo_New_Buildings_Code.sql</File>
+				<!--<File Priority="89">Gameplay/Quo_Beliefs_Code.sql</File>-->
+				<!--<File Priority="88">Gameplay/Quo_Secrets_Code.sql</File>-->
+				<File Priority="87">Gameplay/Quo_Units_Code.sql</File>
+				<File Priority="86">Gameplay/Quo_Patron_Code.sql</File>
+				<File Priority="85">Gameplay/Quo_PopYield_Code.sql</File>
+				<File Priority="84">Gameplay/Quo_GreatPeople_Code.sql</File>
+				<File Priority="83">Gameplay/Quo_REX_Code.sql</File>
+				<File Priority="82">Gameplay/Quo_Hell_Code.sql</File>
+				<File Priority="82">Gameplay/Quo_Biome_Code.sql</File>
+				<File Priority="82">Gameplay/Quo_Enviro_Code.sql</File>
+				<File Priority="81">Gameplay/Quo_Governors_Code.sql</File>
+						
+
+				<File Priority="50">Gameplay/Quo_AI_Civ_Code.sql</File>
+
+				<!-- XAV Improvements Patch Files -->
+				
+				<File Priority="25">XAV_IP/XAV_DistrictBuilders_Code.sql</File>
+				<File Priority="25">XAV_IP/XAV_SlowerTechRules_Code.sql</File>
+				<File Priority="25">XAV_IP/XAV_Boosts_Code.sql</File>
+
+				<!-- Scratchpad -->
+				<File Priority="15">MyScratchpad.sql</File>
+
+				
+				<File Priority="10">Gameplay/Quo_ZY_Closeout_Code.sql</File>
+				<File Priority="5">Gameplay/Quo_ZZ_Debug_Code.sql</File>
+
+			</Items>
+		</UpdateDatabase>
+
+
+  	  	<!--Localized Text-->
+    		<LocalizedText id="QUO_TEXT_BASIC">
+           		<Properties>
+               			<RuleSet>RULESET_EXPANSION_2</RuleSet>
+				<LoadOrder>10100</LoadOrder>
+           		</Properties>
+      			<Items>
+				<File Priority="1">Gameplay/Quo_AA_Setup_Code.sql</File>
+				<File Priority="1">MyOptions.sql</File>			
+				
+				<File>Text/Quo_Main_Text.sql</File>
+				<File>Text/Quo_Main_Text_New.xml</File>
+				<File>Text/Quo_Policy_Text.sql</File>
+				<File>Text/Quo_Civ_Text.sql</File>
+				<File>Text/Quo_Civ_Text_New.xml</File>
+				<File>Text/Quo_Civ_Text_Tutorial.xml</File>	
+				<File>Text/Quo_RandomAgendas_Text.sql</File>
+				
+				<!-- Scratchpad -->
+				<File>MyScratchpad_Text.sql</File>
+
+
+				<!-- <File>Text/ru_RU/Quo_Civ_Text_ru_RU.sql</File> -->
+
+      			</Items>
+    		</LocalizedText>
+
+    		<LocalizedText id="QUO_RULESET_CIVS_ONLY">
+           		<Properties>
+               			<RuleSet>QUO_RULESET_CIVS_ONLY</RuleSet>
+				<LoadOrder>10100</LoadOrder>
+           		</Properties>
+      			<Items>
+				<File Priority="1">Gameplay/Quo_AA_Setup_Code.sql</File>
+				<File Priority="1">MyOptions.sql</File>		
+				
+				<File>Text/Quo_Civ_Text.sql</File>
+				<File>Text/Quo_Civ_Text_New.xml</File>
+				<File>Text/Quo_Civ_Text_Tutorial.xml</File>
+				<!-- <File>Text/Quo_RandomAgendas_Text.sql</File> -->
+				
+				<!-- <File>Text/ru_RU/Quo_Civ_Text_ru_RU.sql</File> -->
+      			</Items>
+    		</LocalizedText>
+
+		
+			<GameplayScripts id="QUO_GAMESCRIPT_FILES">
+      			<Items>
+		        	<File>Scripts/Quo_GameLaunch.lua</File>
+      			</Items>
+		</GameplayScripts> 
+ 
+
+	</Components>
+	
+
+</Mod>

@@ -1,0 +1,15 @@
+Hey all,
+As the sub is starting to grow more & more, so do the posts regarding how to join or those asking about it's status. As such, random bits of information are spread all over the posts in comments or some other way, so this post will contain everything needed to get you playing CoH again. It will be regularly updated should something change.
+HOW TO JOIN:
+Download and install Tequila: http://patch.savecoh.com/tequila.exe ; If you are a Mac user download: http://ir.powermad.net/islandrum-mac.zip
+If Tequila does not automatically download i24 for you, download it using the magnet link down below in any torrent browser AND also ensure the CoH folder is in the same directory as Tequila. This is the link for the torrent: magnet:?xt=urn:btih:606490b92fc35d249abff9f00360302d0552e735&dn=coh
+Ensure you direct Tequila or Island Rum towards your i24 download during install. (If Tequila downloaded it automatically this step does not apply to you)
+Set up an account at: http://score.savecoh.com/
+Once you sign into your forum account, proceed to the account creation portion of the website using the following link: https://score.savecoh.com/account/ ; Once you have created your account all you have to do then is wait. When the server comes up the Tequila client will update and you will be able to log in using the account you created from the previous link. If the websites are down DO NOT PANIC, just wait a couple of mins and try again.
+If all is well, launch Tequilla and select SCORE from the small browser. The game will launch and you will see the login screen.
+IMPORTANT NOTE: Your forum account is not what you will login to the game with, you will use your forum account to CREATE your game account and then use that for logging into the game.
+This is what you should see from Tequila while its updating: https://i.imgur.com/xhB32UH.png
+If you receive an error like:
+Was unable to download fileDownload error: score/missions.pigg
+Was unable to download fileDownload error: score/kallisti.pigg
+Just click the re-verify button from the options and it should work.

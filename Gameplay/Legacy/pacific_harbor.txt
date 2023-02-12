@@ -1,0 +1,178 @@
+INSERT INTO Types
+	(Type, 				Kind)
+VALUES 	('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR',	'KIND_DISTRICT'	) ,
+		('QUO_TRAIT_BIOME_ASIAN_PACIFIC_BUILD_HARBOR', 	'KIND_TRAIT') ;
+
+INSERT INTO Traits 
+	(TraitType,				Name,							Description,						InternalOnly)
+VALUES ('QUO_TRAIT_BIOME_ASIAN_PACIFIC_BUILD_HARBOR',	NULL,		NULL,	0) ;
+
+
+INSERT INTO Districts (
+                          DistrictType,
+                          Name,
+                          PrereqTech,
+                          PrereqCivic,
+                          Coast,
+                          Description,
+                          Cost,
+                          RequiresPlacement,
+                          RequiresPopulation,
+                          NoAdjacentCity,
+                          CityCenter,
+                          Aqueduct,
+                          InternalOnly,
+                          ZOC,
+                          FreeEmbark,
+                          HitPoints,
+                          CaptureRemovesBuildings,
+                          CaptureRemovesCityDefenses,
+                          PlunderType,
+                          PlunderAmount,
+                          TradeEmbark,
+                          MilitaryDomain,
+                          CostProgressionModel,
+                          CostProgressionParam1,
+                          TraitType,
+                          Appeal,
+                          Housing,
+                          Entertainment,
+                          OnePerCity,
+                          AllowsHolyCity,
+                          Maintenance,
+                          AirSlots,
+                          CitizenSlots,
+                          TravelTime,
+                          CityStrengthModifier,
+                          AdjacentToLand,
+                          CanAttack,
+                          AdvisorType,
+                          CaptureRemovesDistrict,
+                          MaxPerPlayer
+                      )
+                      VALUES (
+                          'QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR', --'DistrictType',
+                          'LOC_QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR_NAME', --'Name',
+                          'TECH_CELESTIAL_NAVIGATION', --'PrereqTech',
+                          NULL, --'PrereqCivic',
+                          1, --'Coast',
+                          'LOC_QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR_DESCRIPTION', --'Description',
+                          27, --'Cost',
+                          1, --'RequiresPlacement',
+                          1, --'RequiresPopulation',
+                          0, --'NoAdjacentCity',
+                          0, --'CityCenter',
+                          0, --'Aqueduct',
+                          0, --'InternalOnly',
+                          0, --'ZOC',
+                          1, --'FreeEmbark',
+                          0, --'HitPoints',
+                          0, --'CaptureRemovesBuildings',
+                          0, --'CaptureRemovesCityDefenses',
+                          'PLUNDER_GOLD', --'PlunderType',
+                          50, --'PlunderAmount',
+                          1, --'TradeEmbark',
+                          'DOMAIN_SEA', --'MilitaryDomain',
+                          'COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH', --'CostProgressionModel',
+                          40, --'CostProgressionParam1',
+                          'QUO_TRAIT_BIOME_ASIAN_PACIFIC_BUILD_HARBOR', --'TraitType',
+                          0, --'Appeal',
+                          0, --'Housing',
+                          0, --'Entertainment',
+                          1, --'OnePerCity',
+                          0, --'AllowsHolyCity',
+                          0, --'Maintenance',
+                          0, --'AirSlots',
+                          0, --'CitizenSlots',
+                          2, --'TravelTime',
+                          2, --'CityStrengthModifier',
+                          0, --'AdjacentToLand',
+                          0, --'CanAttack',
+                          'ADVISOR_GENERIC', --'AdvisorType',
+                          1, --'CaptureRemovesDistrict',
+                          -1 --'MaxPerPlayer'
+                      );
+
+
+
+INSERT INTO DistrictReplaces
+		(CivUniqueDistrictType, ReplacesDistrictType)
+VALUES	('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR', 'DISTRICT_HARBOR');
+
+
+-- fix the Shipyard adjacencies for various policies and systems
+
+-- Shipyards
+INSERT INTO Building_YieldDistrictCopies
+	(BuildingType, OldYieldType, NewYieldType)
+VALUES ('BUILDING_SHIPYARD', 'YIELD_CULTURE', 'YIELD_PRODUCTION');
+
+
+-- Fix adjacencies in governors, policies
+INSERT INTO Modifiers 
+	(ModifierId, 	ModifierType, 	RunOnce, Permanent, OwnerRequirementSetId, SubjectRequirementSetId)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_FIX_HARBOR_ADJACENCIES_100', 	'MODIFIER_CITY_DISTRICTS_ADJUST_YIELD_MODIFIER', 0, 0, NULL, 'DISTRICT_IS_HARBOR') ;
+
+INSERT INTO ModifierArguments
+	(ModifierId, 			Name, 		Type, 			Value, 					Extra, 	SecondExtra)
+VALUES	('QUO_BIOME_ASIAN_PACIFIC_FIX_HARBOR_ADJACENCIES_100', 	'Amount', 	'ARGTYPE_IDENTITY', 	'100',		NULL, 	NULL) ,
+		('QUO_BIOME_ASIAN_PACIFIC_FIX_HARBOR_ADJACENCIES_100', 	'YieldType', 	'ARGTYPE_IDENTITY', 	'YIELD_CULTURE',		NULL, 	NULL) ;
+
+--governors
+INSERT INTO GovernorPromotionModifiers
+	(GovernorPromotionType, ModifierId)
+VALUES	('GOVERNOR_PROMOTION_MERCHANT_HARBORMASTER','QUO_BIOME_ASIAN_PACIFIC_FIX_HARBOR_ADJACENCIES_100');
+
+--policies
+INSERT INTO PolicyModifiers
+	(PolicyType, ModifierId)
+VALUES	('POLICY_NAVAL_INFRASTRUCTURE','QUO_BIOME_ASIAN_PACIFIC_FIX_HARBOR_ADJACENCIES_100');
+
+		
+
+
+--give the trait to appropriate civs. 
+INSERT INTO CivilizationTraits 
+	(CivilizationType, TraitType)
+SELECT tempCivilizationType, 'QUO_TRAIT_BIOME_ASIAN_PACIFIC_BUILD_HARBOR'
+FROM tblTempCivilizationTraits WHERE tempCivilizationType IN (SELECT tempCivilizationType FROM tblTempCivilizationTraits WHERE tempTraitType = 'QUO_TRAIT_BIOME_ASIAN_PACIFIC') 
+	AND EXISTS (SELECT 1 FROM Civilizations WHERE CivilizationType = tempCivilizationType)
+    AND EXISTS (SELECT 1 FROM tblQuoOptions WHERE OptionId='QUO_OPTION_ENABLE_BIOMES' AND Value > 0) ;
+
+
+INSERT INTO Adjacency_YieldChanges 
+		(ID,										Description,											YieldType,		YieldChange,	TilesRequired,	OtherDistrictAdjacent,	AdjacentSeaResource,	AdjacentTerrain,	AdjacentFeature,	AdjacentRiver,	AdjacentWonder,	AdjacentNaturalWonder,	AdjacentImprovement,		AdjacentDistrict,	PrereqCivic,	PrereqTech,	ObsoleteCivic,	ObsoleteTech,	AdjacentResource, Self)
+VALUES	('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR_adjacency',	'QUO_LOC_BIOME_ASIAN_PACIFIC_HARBOR_ADJ_DESCRIPTION',	'YIELD_CULTURE',	1,				1,				0,						1,						NULL,				NULL,			0,		0,		0,			NULL,	NULL,			NULL,		NULL,		NULL,		NULL,		0, 0)  ,	
+		('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR_adj_reef',	'QUO_LOC_BIOME_ASIAN_PACIFIC_HARBOR_ADJ_REEF_DESCRIPTION',	'YIELD_CULTURE',	1,				1,				0,						0,						NULL,				'FEATURE_REEF',			0,		0,		0,			NULL,	NULL,			NULL,		NULL,		NULL,		NULL,		0,0 )  ,	
+		('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR_base',	'QUO_LOC_BIOME_ASIAN_PACIFIC_HARBOR_BASE_DESCRIPTION',	'YIELD_CULTURE',	2,				1,				0,						0,						NULL,				NULL,			0,		0,		0,			NULL,	NULL,			NULL,		NULL,		NULL,		NULL,		0,1)  ;	
+
+		
+INSERT INTO District_Adjacencies (DistrictType,YieldChangeId)
+VALUES 	('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR', 'QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR_adjacency'),
+		('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR', 'QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR_adj_reef'),
+		('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR', 'QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR_base');
+		
+
+INSERT INTO District_CitizenYieldChanges (DistrictType,YieldType,YieldChange)
+VALUES 	('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR','YIELD_CULTURE','2'),
+		('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR','YIELD_SCIENCE','1');
+
+
+INSERT INTO District_GreatPersonPoints (DistrictType,GreatPersonClassType,PointsPerTurn)
+VALUES ('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR','GREAT_PERSON_CLASS_ADMIRAL',1),
+		('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR','GREAT_PERSON_CLASS_WRITER',1),
+		('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR','GREAT_PERSON_CLASS_ARTIST',1),
+		('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR','GREAT_PERSON_CLASS_MUSICIAN',1);
+		
+INSERT INTO District_TradeRouteYields (DistrictType,YieldType,YieldChangeAsOrigin,YieldChangeAsDomesticDestination,YieldChangeAsInternationalDestination)
+VALUES ('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR','YIELD_PRODUCTION',0,1,0),
+		('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR','YIELD_GOLD',0,0,3);
+
+
+		
+		
+/* INSERT INTO District_ValidTerrains
+		(DistrictType, TerrainType)
+VALUES	('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR', 'TERRAIN_OCEAN'),
+		('QUO_DISTRICT_BIOME_ASIAN_PACIFIC_HARBOR', 'TERRAIN_COAST');
+ */

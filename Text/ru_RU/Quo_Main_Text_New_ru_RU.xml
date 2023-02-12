@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 11/25/2016 1:28:54 PM -->
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_RESOURCE_VICTORY_WIN_NAME" Language="ru_RU">
+			<Text>Ультима Активатор</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_PROJECT_RESOURCE_VICTORY_NAME_SHORT" Language="ru_RU">
+			<Text>[ICON_CAPITAL]Потребительская Ультима - СТРОЙТЕ ЧТОБЫ ДОСТИЧЬ РЕСУРСНОЙ ПОБЕДЫ</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_PROJECT_RESOURCE_VICTORY_DESCRIPTION" Language="ru_RU">
+			<Text>[ICON_CAPITAL]Завершите проект "Потребительская Ультима", чтобы добиться ресурсной победы. Вы можете построить этот проект только в том случае, если у вас есть достаточное количество ресурсов.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_RESOURCE_ULTIMA_NAME" Language="ru_RU">
+			<Text>[ICON_CAPITAL]Ультима Экстрактор</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_RESOURCE_VICTORY_NAME" Language="ru_RU">
+			<Text>Роскошная победа</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_RESOURCE_VICTORY_BLURB" Language="ru_RU">
+			<Text>Контролируйте больше копий ресурсов роскоши, чем любой другой игрок (минимум 3) и создайте проект "Потребительская Ультима".</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_BUILDING_RESOURCE_VICTORY_WIN" Language="ru_RU">
+			<Text>Роскошный люкс</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BUILDING_AMBASSADOR_SUITE_NAME" Language="ru_RU">
+			<Text>Гостиница при посольстве</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_BUILDING_AMBASSADOR_SUITE_DESCRIPTION" Language="ru_RU">
+			<Text>После постройки предоставляет одного бесплатного посла, которого можно направить в город-государство. Взаимозаменяем с зоопарком.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_TECH_ASTROLOGY_DESCRIPTION" Language="ru_RU">
+			<Text>Позволяет торговцам грузиться на корабли. Устанавливается контакт с Екатериной Медичи, если она есть в игре и вы с ней еще не встречались.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_TECH_WRITING_DESCRIPTION" Language="ru_RU">
+			<Text>Позволяет строить Кампусы и библиотеки. Позволяет заключать договор "О совместных исследованиях" с другой цивилизацией.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_FRIENDS_AZTEC_GLOBAL_COMBAT_DESCRIPTION" Language="ru_RU">
+			<Text>+4 от дружбы с Ацтеками</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_QUO_ABI_PIKEMAN_DEBUFF_PREVIEW" Language="ru_RU">
+			<Text>-5 от [ICON_STRENGTH] боевой мощи за соседний анти-кавалерийский юнит.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_OPTION_BORDER_SPEED_NAME" Language="ru_RU">
+			<Text>[ICON_CAPITAL] Скорость роста границ</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_OPTION_BORDER_SPEED_DESCRIPTION" Language="ru_RU">
+			<Text>[ICON_CAPITAL] Добавлено Quo модом. Скорость расширения границы.</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_OPTION_BORDERS_DUMMY_NAME" Language="ru_RU">
+			<Text>Управление пограничной администрации</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_OPTION_ADMINISTRATION_DUMMY_NAME" Language="ru_RU">
+			<Text>[ICON_CAPITAL]Лидерский трон</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_CITRUS" Language="ru_RU">
+			<Text>[ICON_FOOD]Экспорт: Цитрусовые</Text>
+		</Row>
+	</LocalizedText>
+
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_COCOA" Language="ru_RU">
+			<Text>[ICON_GOLD]Экспорт: Шоколад</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_COFFEE" Language="ru_RU">
+			<Text>[ICON_CULTURE]Экспорт: Кофе</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_COTTON" Language="ru_RU">
+			<Text>[ICON_GOLD]ExЭкспортpo: Хлопок</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_DIAMONDS" Language="ru_RU">
+			<Text>[ICON_GOLD]Экспорт: Бриллианты</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_DYES" Language="ru_RU">
+			<Text>[ICON_FAITH]Экспорт: Красители</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_FURS" Language="ru_RU">
+			<Text>[ICON_GOLD]Экспорт: Меха</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_GYPSUM" Language="ru_RU">
+			<Text>[ICON_PRODUCTION]Экспорт: Гипс</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_INCENSE" Language="ru_RU">
+			<Text>[ICON_FAITH]Экспорт: Ладан</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_IVORY" Language="ru_RU">
+			<Text>[ICON_PRODUCTION]Экспорт: Слоновая кость</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_MARBLE" Language="ru_RU">
+			<Text>[ICON_CULTURE]Экспорт: Мрамор</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_MERCURY" Language="ru_RU">
+			<Text>[ICON_SCIENCE]Экспорт: Ртуть</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_PEARLS" Language="ru_RU">
+			<Text>[ICON_FAITH]Экспорт: Жемчуг</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_SALT" Language="ru_RU">
+			<Text>[ICON_FOOD]Экспорт: Соль</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_SILK" Language="ru_RU">
+			<Text>[ICON_CULTURE]Экспорт: Шелк</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_SILVER" Language="ru_RU">
+			<Text>[ICON_GOLD]Экспорт: Серебро</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_SPICES" Language="ru_RU">
+			<Text>[ICON_FOOD]Экспорт: Пряности</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_SUGAR" Language="ru_RU">
+			<Text>[ICON_FOOD]Экспорт: Сахар</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_TEA" Language="ru_RU">
+			<Text>[ICON_SCIENCE]Экспорт: Чай</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_TOBACCO" Language="ru_RU">
+			<Text>[ICON_FAITH]Экспорт: Табак</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_TRUFFLES" Language="ru_RU">
+			<Text>[ICON_GOLD]Экспорт: Трюфели</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_WHALES" Language="ru_RU">
+			<Text>[ICON_FAITH]Экспорт: Киты</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_WINE" Language="ru_RU">
+			<Text>[ICON_FOOD]Экспорт: Вино</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="LOC_QUO_BUILDING_MONOPOLY_RESOURCE_JADE" Language="ru_RU">
+			<Text>[ICON_CULTURE]Экспорт: Нефрит</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_UNIT_WATCHTOWER_NAME" Language="ru_RU">
+			<Text>Сторожевая башня</Text>
+		</Row>
+	</LocalizedText>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_UNIT_WATCHTOWER_DESCRIPTION" Language="ru_RU">
+			<Text>Сторожевые башни обеспечивают обзор большей площади. Их могут захватить вражеские боевые подразделения.</Text>
+		</Row>
+	</LocalizedText>
+</GameData>
+
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 11/25/2016 1:28:54 PM -->
+<GameData>
+	<LocalizedText>
+		<Row Tag="QUO_LOC_TUTORIAL_WELCOME" Language="en_US">
+			<Text>Welcome to Quo's Combined Tweaks Mod for Rise and Fall. This mod makes a number of changes to gameplay. Most changes are marked with a [ICON_CAPITAL] star to help you determine what has been changed. Here are some big picture items to be aware of:[NEWLINE][NEWLINE][ICON_BOLT]Now updated for the Rise and Fall expansion! Look for patch updates on CivFanatics.com. [NEWLINE][NEWLINE][ICON_BOLT]The Biomes feature has been released. See descriptions on the civfanatics.com forums.[NEWLINE][NEWLINE][ICON_BOLT]Secret agendas have returned! Build diplomatic relations with your opponents to view the rewards the "flavor" of their secret agendas. Roll over the agenda to see how you might exploit the flavor to your benefit.[NEWLINE][NEWLINE][ICON_BOLT]The default value of several MyOptions from the Vanilla version of this mod have changed. Use the MyOptions.sql file in the mod folder to adjust the mod to your preferences.[NEWLINE][NEWLINE][ICON_BOLT]Rocketboots! All units (except siege units) have +1 movement.[NEWLINE][NEWLINE][ICON_BOLT]Siege units have 2 Move, 3 Range, and can move and attack on the same turn.[NEWLINE][NEWLINE][ICON_BOLT]World Wonders are extra special! Depending on how you have configured MyOptions, they may Culture Bomb nearby tiles, stealing them from other civs.[NEWLINE][NEWLINE][ICON_BOLT]City borders expand much faster--move quickly![NEWLINE][NEWLINE][ICON_BOLT]Rival civs may have special gifts for you if you befriend them. Check their Historical Agendas to see what they have to offer.</Text>
+		</Row>
+	</LocalizedText>
+		<LocalizedText>
+		<Row Tag="QUO_LOC_TUTORIAL_RULES" Language="en_US">
+			<Text>Settling cities in Quo's Combined Tweaks mod has some different implications on gameplay.[NEWLINE][NEWLINE][ICON_BOLT]City walls require Bedrock sufficient to support them. You are more vulnerable than ever before. You can obtain Ancient Bedrock from Encampments, Medieval Bedrock from World Wonders, and Renaissance Bedrock from acquiring 5 deep water ocean tiles.[NEWLINE][NEWLINE][ICON_BOLT]Sea resources are improved, and are higher priority than before.[NEWLINE][NEWLINE][ICON_BOLT]Harbors receive a +2[ICON_GOLD] Gold adjacency bonus for being placed directly next to City Centers, making these locations more attractive.[NEWLINE][NEWLINE][ICON_BOLT]City Centers also automatically recieve bonus [ICON_GOLD] Gold and [ICON_PRODUCTION] Production from every 2 adjacent Ocean tiles, increasing as you progress through the tech tree.[NEWLINE][NEWLINE][ICON_BOLT]Snow and Deserts now feature Oases and Hotspots that are lush with yields. These locations are particularly attractive for civs with unique improvements that can be built on any terrain.</Text>		
+		</Row>
+	</LocalizedText>
+</GameData>
+

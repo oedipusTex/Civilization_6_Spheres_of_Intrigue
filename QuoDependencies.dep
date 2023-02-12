@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<AssetObjects::GameDependencyData>
+    
+	<ID>
+        
+		<name text="QuoCombinedTweaks"/>
+        
+		<id text="dfb06c74-086c-4a94-9618-3d96183a2d55"/>
+    
+	</ID>
+    
+	<SystemDependencies>
+    
+		<Element>
+			<ConsumerName text="Buildings"/>
+			<ArtDefDependencyPaths>
+ 				<Element text="Buildings.artdef"/>
+			</ArtDefDependencyPaths>
+		</Element>
+    
+		<Element>
+			<ConsumerName text="WonderMovie"/>
+			<ArtDefDependencyPaths>
+ 				<Element text="WonderMovie.artdef"/>
+			</ArtDefDependencyPaths>
+		</Element>
+		
+ 		<Element>
+			<ConsumerName text="Improvements"/>
+			<ArtDefDependencyPaths>
+ 				<Element text="Improvements.artdef"/>
+			</ArtDefDependencyPaths>
+		</Element>
+		 
+		<Element>
+			<ConsumerName text="Resources"/>
+			<ArtDefDependencyPaths>
+				<Element text="Resources.artdef"/>
+				<Element text="Clutter.artdef"/>
+			</ArtDefDependencyPaths>
+			<LibraryDependencies/>
+			<LoadsLibraries>false</LoadsLibraries>
+		</Element> 
+		
+ 		<Element>
+			<ConsumerName text="Districts"/>
+			<ArtDefDependencyPaths>
+ 				<Element text="Districts.artdef"/>
+			</ArtDefDependencyPaths>
+		</Element>
+	
+		<Element>
+			<ConsumerName text="Units"/>
+			<ArtDefDependencyPaths>
+				<Element text="Units.artdef"/>
+			</ArtDefDependencyPaths>
+			<LibraryDependencies>
+				<Element text="Unit"/>
+				<Element text="VFX"/>
+				<Element text="Light"/>
+			</LibraryDependencies>
+			<LoadsLibraries>true</LoadsLibraries>
+		</Element>
+		
+	</SystemDependencies>
+
+</AssetObjects::GameDependencyData>
